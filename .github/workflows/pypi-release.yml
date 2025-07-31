@@ -20,7 +20,7 @@ on:
 
 jobs:
   build-pypi-distribs-sdist:
-    name: Build and publish sdist to PyPI
+    name: Build sdist
     runs-on: ubuntu-24.04
 
     strategy:
@@ -47,7 +47,7 @@ jobs:
 
 
   build-pypi-distribs-wheel:
-    name: Build and publish wheels to PyPI
+    name: Build wheels
     needs:
       - build-pypi-distribs-sdist
     runs-on: ubuntu-24.04
@@ -76,7 +76,7 @@ jobs:
 
 
   upload-pypi-distribs:
-    name: Build and publish wheels to PyPI
+    name: Upload built sdist and wheels
     needs:
       - build-pypi-distribs-sdist
       - build-pypi-distribs-wheel
