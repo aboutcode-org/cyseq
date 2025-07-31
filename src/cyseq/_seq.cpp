@@ -5,12 +5,12 @@
     "distutils": {
         "depends": [],
         "language": "c++",
-        "name": "fastseq._seq",
+        "name": "cyseq._seq",
         "sources": [
-            "src/fastseq/_seq.pyx"
+            "src/cyseq/_seq.pyx"
         ]
     },
-    "module_name": "fastseq._seq"
+    "module_name": "cyseq._seq"
 }
 END: Cython Metadata */
 
@@ -1138,8 +1138,8 @@ static CYTHON_INLINE float __PYX_NAN() {
     #define __PYX_EXTERN_C extern "C++"
 #endif
 
-#define __PYX_HAVE__fastseq___seq
-#define __PYX_HAVE_API__fastseq___seq
+#define __PYX_HAVE__cyseq___seq
+#define __PYX_HAVE_API__cyseq___seq
 /* Early includes */
 #include "ios"
 #include "new"
@@ -1368,7 +1368,7 @@ static const char *__pyx_filename;
 /* #### Code section: filename_table ### */
 
 static const char* const __pyx_f[] = {
-  "src/fastseq/_seq.pyx",
+  "src/cyseq/_seq.pyx",
 };
 /* #### Code section: utility_code_proto_before_types ### */
 /* Atomics.proto */
@@ -1535,33 +1535,33 @@ static const char* const __pyx_f[] = {
 /* #### Code section: type_declarations ### */
 
 /*--- Type declarations ---*/
-struct __pyx_t_7fastseq_4_seq_MatchingBlockQueueElem;
-typedef struct __pyx_t_7fastseq_4_seq_MatchingBlockQueueElem __pyx_t_7fastseq_4_seq_MatchingBlockQueueElem;
-struct __pyx_t_7fastseq_4_seq_CMatch;
-typedef struct __pyx_t_7fastseq_4_seq_CMatch __pyx_t_7fastseq_4_seq_CMatch;
+struct __pyx_t_5cyseq_4_seq_MatchingBlockQueueElem;
+typedef struct __pyx_t_5cyseq_4_seq_MatchingBlockQueueElem __pyx_t_5cyseq_4_seq_MatchingBlockQueueElem;
+struct __pyx_t_5cyseq_4_seq_CMatch;
+typedef struct __pyx_t_5cyseq_4_seq_CMatch __pyx_t_5cyseq_4_seq_CMatch;
 
-/* "fastseq/_seq.pyx":34
+/* "cyseq/_seq.pyx":34
  * 
  * 
  * ctypedef struct MatchingBlockQueueElem:             # <<<<<<<<<<<<<<
  *     Py_ssize_t alo
  *     Py_ssize_t ahi
 */
-struct __pyx_t_7fastseq_4_seq_MatchingBlockQueueElem {
+struct __pyx_t_5cyseq_4_seq_MatchingBlockQueueElem {
   Py_ssize_t alo;
   Py_ssize_t ahi;
   Py_ssize_t blo;
   Py_ssize_t bhi;
 };
 
-/* "fastseq/_seq.pyx":41
+/* "cyseq/_seq.pyx":41
  * 
  * 
  * ctypedef struct CMatch:             # <<<<<<<<<<<<<<
  *     Py_ssize_t a
  *     Py_ssize_t b
 */
-struct __pyx_t_7fastseq_4_seq_CMatch {
+struct __pyx_t_5cyseq_4_seq_CMatch {
   Py_ssize_t a;
   Py_ssize_t b;
   Py_ssize_t size;
@@ -2334,17 +2334,17 @@ static int __Pyx_State_RemoveModule(void*);
 
 /* Module declarations from "libcpp.vector" */
 
-/* Module declarations from "fastseq._seq" */
-static int __pyx_f_7fastseq_4_seq_CMatch_sorter(__pyx_t_7fastseq_4_seq_CMatch const &, __pyx_t_7fastseq_4_seq_CMatch const &); /*proto*/
-static __pyx_t_7fastseq_4_seq_CMatch __pyx_f_7fastseq_4_seq__find_longest_match(PyObject *, PyObject *, Py_ssize_t, Py_ssize_t, Py_ssize_t, Py_ssize_t, PyObject *, Py_ssize_t, PyObject *); /*proto*/
-static __pyx_t_7fastseq_4_seq_CMatch __pyx_f_7fastseq_4_seq_extend_match(Py_ssize_t, Py_ssize_t, Py_ssize_t, PyObject *, PyObject *, Py_ssize_t, Py_ssize_t, Py_ssize_t, Py_ssize_t, PyObject *); /*proto*/
+/* Module declarations from "cyseq._seq" */
+static int __pyx_f_5cyseq_4_seq_CMatch_sorter(__pyx_t_5cyseq_4_seq_CMatch const &, __pyx_t_5cyseq_4_seq_CMatch const &); /*proto*/
+static __pyx_t_5cyseq_4_seq_CMatch __pyx_f_5cyseq_4_seq__find_longest_match(PyObject *, PyObject *, Py_ssize_t, Py_ssize_t, Py_ssize_t, Py_ssize_t, PyObject *, Py_ssize_t, PyObject *); /*proto*/
+static __pyx_t_5cyseq_4_seq_CMatch __pyx_f_5cyseq_4_seq_extend_match(Py_ssize_t, Py_ssize_t, Py_ssize_t, PyObject *, PyObject *, Py_ssize_t, Py_ssize_t, Py_ssize_t, Py_ssize_t, PyObject *); /*proto*/
 /* #### Code section: typeinfo ### */
 /* #### Code section: before_global_var ### */
-#define __Pyx_MODULE_NAME "fastseq._seq"
-extern int __pyx_module_is_main_fastseq___seq;
-int __pyx_module_is_main_fastseq___seq = 0;
+#define __Pyx_MODULE_NAME "cyseq._seq"
+extern int __pyx_module_is_main_cyseq___seq;
+int __pyx_module_is_main_cyseq___seq = 0;
 
-/* Implementation of "fastseq._seq" */
+/* Implementation of "cyseq._seq" */
 /* #### Code section: global_var ### */
 static PyObject *__pyx_builtin_range;
 /* #### Code section: string_decls ### */
@@ -2388,10 +2388,10 @@ static const char __pyx_k_a_b_size[] = "a b size";
 static const char __pyx_k_len_good[] = "len_good";
 static const char __pyx_k_qualname[] = "__qualname__";
 static const char __pyx_k_set_name[] = "__set_name__";
+static const char __pyx_k_cyseq__seq[] = "cyseq._seq";
 static const char __pyx_k_matchables[] = "matchables";
 static const char __pyx_k_namedtuple[] = "namedtuple";
 static const char __pyx_k_collections[] = "collections";
-static const char __pyx_k_fastseq__seq[] = "fastseq._seq";
 static const char __pyx_k_is_coroutine[] = "_is_coroutine";
 static const char __pyx_k_match_blocks[] = "match_blocks";
 static const char __pyx_k_namedtuple_2[] = "_namedtuple";
@@ -2400,12 +2400,12 @@ static const char __pyx_k_matching_blocks[] = "matching_blocks";
 static const char __pyx_k_asyncio_coroutines[] = "asyncio.coroutines";
 static const char __pyx_k_cline_in_traceback[] = "cline_in_traceback";
 static const char __pyx_k_find_longest_match[] = "find_longest_match";
+static const char __pyx_k_src_cyseq__seq_pyx[] = "src/cyseq/_seq.pyx";
 static const char __pyx_k_X_1Cs_uE_e_Q_5_at1A[] = "\200\001\360X\001\000\005\t\320\010\033\2301\230C\230s\240%\240u\250E\260\025\260e\270:\300Q\330\004\013\2105\220\001\220\021\220$\220a\220t\2301\230A";
-static const char __pyx_k_src_fastseq__seq_pyx[] = "src/fastseq/_seq.pyx";
 static const char __pyx_k_L_9G3c_e6_uE_U_vT_t6_V4q_Ya_q_3[] = "\200\001\360L\001\000\005\n\210\032\320\023*\250!\2509\260G\2703\270c\300\021\300!\330\004\n\210$\210e\2206\230\021\330\010\017\210u\220E\230\021\330\010\r\210U\220%\220v\230T\240\026\240t\2506\260\024\260V\2704\270q\330\010\r\210Y\220a\330\010\014\320\014\037\230q\240\003\2403\240e\2505\260\005\260U\270%\270z\310\021\330\010\013\2103\210d\220!\2204\220q\230\004\230A\230Q\360\010\000\t\014\2101\330\014\033\230:\240Q\240a\330\014\017\210t\2202\220R\220t\2304\230r\240\021\340\020\025\220Z\320\0376\260a\260u\270C\270u\300A\330\014\017\210r\220\022\2202\220R\220t\2304\230r\240\022\2402\240R\240q\340\020\025\220Z\320\0376\260a\260q\270\001\270\023\270E\300\021\300!\3003\300a\340\004\014\210A\210_\230F\240$\240o\260T\270\024\270Q\270a\360\006\000\005\n\210\025\210e\2201\330\004\023\2201\330\004\010\210\t\220\021\330\010\014\210D\220\005\220U\230$\230e\2404\240u\250A\340\010\013\2103\210b\220\003\2203\220c\230\024\230S\240\002\240#\240S\250\001\360\010\000\r\023\220!\360\n\000\r\020\210q\330\020\034\230G\2401\240E\250\021\250$\250d\260!\330\014\020\220\004\220E\230\024\230T\240\021\330\004\007\200q\330\010\024\220G\2301\230E\240\021\240$\240d\250!\340\004\013\2101";
 /* #### Code section: decls ### */
-static PyObject *__pyx_pf_7fastseq_4_seq_find_longest_match(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_a, PyObject *__pyx_v_b, Py_ssize_t __pyx_v_alo, Py_ssize_t __pyx_v_ahi, Py_ssize_t __pyx_v_blo, Py_ssize_t __pyx_v_bhi, PyObject *__pyx_v_b2j, Py_ssize_t __pyx_v_len_good, PyObject *__pyx_v_matchables); /* proto */
-static PyObject *__pyx_pf_7fastseq_4_seq_2match_blocks(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_a, PyObject *__pyx_v_b, Py_ssize_t __pyx_v_a_start, Py_ssize_t __pyx_v_a_end, PyObject *__pyx_v_b2j, Py_ssize_t __pyx_v_len_good, PyObject *__pyx_v_matchables, CYTHON_UNUSED PyObject *__pyx_v_args, CYTHON_UNUSED PyObject *__pyx_v_kwargs); /* proto */
+static PyObject *__pyx_pf_5cyseq_4_seq_find_longest_match(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_a, PyObject *__pyx_v_b, Py_ssize_t __pyx_v_alo, Py_ssize_t __pyx_v_ahi, Py_ssize_t __pyx_v_blo, Py_ssize_t __pyx_v_bhi, PyObject *__pyx_v_b2j, Py_ssize_t __pyx_v_len_good, PyObject *__pyx_v_matchables); /* proto */
+static PyObject *__pyx_pf_5cyseq_4_seq_2match_blocks(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_a, PyObject *__pyx_v_b, Py_ssize_t __pyx_v_a_start, Py_ssize_t __pyx_v_a_end, PyObject *__pyx_v_b2j, Py_ssize_t __pyx_v_len_good, PyObject *__pyx_v_matchables, CYTHON_UNUSED PyObject *__pyx_v_args, CYTHON_UNUSED PyObject *__pyx_v_kwargs); /* proto */
 /* #### Code section: late_includes ### */
 /* #### Code section: module_state ### */
 /* SmallCodeConfig */
@@ -2502,8 +2502,8 @@ static __pyx_mstatetype * const __pyx_mstate_global = &__pyx_mstate_global_stati
 #define __pyx_n_u_blo __pyx_string_tab[14]
 #define __pyx_n_u_cline_in_traceback __pyx_string_tab[15]
 #define __pyx_n_u_collections __pyx_string_tab[16]
-#define __pyx_n_u_elem __pyx_string_tab[17]
-#define __pyx_n_u_fastseq__seq __pyx_string_tab[18]
+#define __pyx_n_u_cyseq__seq __pyx_string_tab[17]
+#define __pyx_n_u_elem __pyx_string_tab[18]
 #define __pyx_n_u_find_longest_match __pyx_string_tab[19]
 #define __pyx_n_u_func __pyx_string_tab[20]
 #define __pyx_n_u_get __pyx_string_tab[21]
@@ -2535,7 +2535,7 @@ static __pyx_mstatetype * const __pyx_mstate_global = &__pyx_mstate_global_stati
 #define __pyx_n_u_range __pyx_string_tab[47]
 #define __pyx_n_u_set_name __pyx_string_tab[48]
 #define __pyx_n_u_size __pyx_string_tab[49]
-#define __pyx_kp_u_src_fastseq__seq_pyx __pyx_string_tab[50]
+#define __pyx_kp_u_src_cyseq__seq_pyx __pyx_string_tab[50]
 #define __pyx_n_u_test __pyx_string_tab[51]
 #define __pyx_n_u_x __pyx_string_tab[52]
 /* #### Code section: module_state_clear ### */
@@ -2589,7 +2589,7 @@ static CYTHON_SMALL_CODE int __pyx_m_traverse(PyObject *m, visitproc visit, void
 #endif
 /* #### Code section: module_code ### */
 
-/* "fastseq/_seq.pyx":47
+/* "cyseq/_seq.pyx":47
  * 
  * 
  * cdef int CMatch_sorter(const CMatch& lhs, const CMatch& rhs):             # <<<<<<<<<<<<<<
@@ -2597,11 +2597,11 @@ static CYTHON_SMALL_CODE int __pyx_m_traverse(PyObject *m, visitproc visit, void
  *         return lhs.a < rhs.a
 */
 
-static int __pyx_f_7fastseq_4_seq_CMatch_sorter(__pyx_t_7fastseq_4_seq_CMatch const &__pyx_v_lhs, __pyx_t_7fastseq_4_seq_CMatch const &__pyx_v_rhs) {
+static int __pyx_f_5cyseq_4_seq_CMatch_sorter(__pyx_t_5cyseq_4_seq_CMatch const &__pyx_v_lhs, __pyx_t_5cyseq_4_seq_CMatch const &__pyx_v_rhs) {
   int __pyx_r;
   int __pyx_t_1;
 
-  /* "fastseq/_seq.pyx":48
+  /* "cyseq/_seq.pyx":48
  * 
  * cdef int CMatch_sorter(const CMatch& lhs, const CMatch& rhs):
  *     if lhs.a != rhs.a:             # <<<<<<<<<<<<<<
@@ -2611,7 +2611,7 @@ static int __pyx_f_7fastseq_4_seq_CMatch_sorter(__pyx_t_7fastseq_4_seq_CMatch co
   __pyx_t_1 = (__pyx_v_lhs.a != __pyx_v_rhs.a);
   if (__pyx_t_1) {
 
-    /* "fastseq/_seq.pyx":49
+    /* "cyseq/_seq.pyx":49
  * cdef int CMatch_sorter(const CMatch& lhs, const CMatch& rhs):
  *     if lhs.a != rhs.a:
  *         return lhs.a < rhs.a             # <<<<<<<<<<<<<<
@@ -2621,7 +2621,7 @@ static int __pyx_f_7fastseq_4_seq_CMatch_sorter(__pyx_t_7fastseq_4_seq_CMatch co
     __pyx_r = (__pyx_v_lhs.a < __pyx_v_rhs.a);
     goto __pyx_L0;
 
-    /* "fastseq/_seq.pyx":48
+    /* "cyseq/_seq.pyx":48
  * 
  * cdef int CMatch_sorter(const CMatch& lhs, const CMatch& rhs):
  *     if lhs.a != rhs.a:             # <<<<<<<<<<<<<<
@@ -2630,7 +2630,7 @@ static int __pyx_f_7fastseq_4_seq_CMatch_sorter(__pyx_t_7fastseq_4_seq_CMatch co
 */
   }
 
-  /* "fastseq/_seq.pyx":50
+  /* "cyseq/_seq.pyx":50
  *     if lhs.a != rhs.a:
  *         return lhs.a < rhs.a
  *     if lhs.b != rhs.b:             # <<<<<<<<<<<<<<
@@ -2640,7 +2640,7 @@ static int __pyx_f_7fastseq_4_seq_CMatch_sorter(__pyx_t_7fastseq_4_seq_CMatch co
   __pyx_t_1 = (__pyx_v_lhs.b != __pyx_v_rhs.b);
   if (__pyx_t_1) {
 
-    /* "fastseq/_seq.pyx":51
+    /* "cyseq/_seq.pyx":51
  *         return lhs.a < rhs.a
  *     if lhs.b != rhs.b:
  *         return lhs.b < rhs.b             # <<<<<<<<<<<<<<
@@ -2650,7 +2650,7 @@ static int __pyx_f_7fastseq_4_seq_CMatch_sorter(__pyx_t_7fastseq_4_seq_CMatch co
     __pyx_r = (__pyx_v_lhs.b < __pyx_v_rhs.b);
     goto __pyx_L0;
 
-    /* "fastseq/_seq.pyx":50
+    /* "cyseq/_seq.pyx":50
  *     if lhs.a != rhs.a:
  *         return lhs.a < rhs.a
  *     if lhs.b != rhs.b:             # <<<<<<<<<<<<<<
@@ -2659,7 +2659,7 @@ static int __pyx_f_7fastseq_4_seq_CMatch_sorter(__pyx_t_7fastseq_4_seq_CMatch co
 */
   }
 
-  /* "fastseq/_seq.pyx":52
+  /* "cyseq/_seq.pyx":52
  *     if lhs.b != rhs.b:
  *         return lhs.b < rhs.b
  *     return lhs.size < rhs.size             # <<<<<<<<<<<<<<
@@ -2669,7 +2669,7 @@ static int __pyx_f_7fastseq_4_seq_CMatch_sorter(__pyx_t_7fastseq_4_seq_CMatch co
   __pyx_r = (__pyx_v_lhs.size < __pyx_v_rhs.size);
   goto __pyx_L0;
 
-  /* "fastseq/_seq.pyx":47
+  /* "cyseq/_seq.pyx":47
  * 
  * 
  * cdef int CMatch_sorter(const CMatch& lhs, const CMatch& rhs):             # <<<<<<<<<<<<<<
@@ -2682,7 +2682,7 @@ static int __pyx_f_7fastseq_4_seq_CMatch_sorter(__pyx_t_7fastseq_4_seq_CMatch co
   return __pyx_r;
 }
 
-/* "fastseq/_seq.pyx":55
+/* "cyseq/_seq.pyx":55
  * 
  * 
  * cdef CMatch _find_longest_match(             # <<<<<<<<<<<<<<
@@ -2690,7 +2690,7 @@ static int __pyx_f_7fastseq_4_seq_CMatch_sorter(__pyx_t_7fastseq_4_seq_CMatch co
  *     b,
 */
 
-static __pyx_t_7fastseq_4_seq_CMatch __pyx_f_7fastseq_4_seq__find_longest_match(PyObject *__pyx_v_a, PyObject *__pyx_v_b, Py_ssize_t __pyx_v_alo, Py_ssize_t __pyx_v_ahi, Py_ssize_t __pyx_v_blo, Py_ssize_t __pyx_v_bhi, PyObject *__pyx_v_b2j, Py_ssize_t __pyx_v_len_good, PyObject *__pyx_v_matchables) {
+static __pyx_t_5cyseq_4_seq_CMatch __pyx_f_5cyseq_4_seq__find_longest_match(PyObject *__pyx_v_a, PyObject *__pyx_v_b, Py_ssize_t __pyx_v_alo, Py_ssize_t __pyx_v_ahi, Py_ssize_t __pyx_v_blo, Py_ssize_t __pyx_v_bhi, PyObject *__pyx_v_b2j, Py_ssize_t __pyx_v_len_good, PyObject *__pyx_v_matchables) {
   Py_ssize_t __pyx_v_besti;
   Py_ssize_t __pyx_v_bestj;
   Py_ssize_t __pyx_v_bestsize;
@@ -2701,7 +2701,7 @@ static __pyx_t_7fastseq_4_seq_CMatch __pyx_f_7fastseq_4_seq__find_longest_match(
   std::unordered_map<Py_ssize_t,Py_ssize_t>  __pyx_v_newj2len;
   PyObject *__pyx_v_nothing = NULL;
   PyObject *__pyx_v_cura = NULL;
-  __pyx_t_7fastseq_4_seq_CMatch __pyx_r;
+  __pyx_t_5cyseq_4_seq_CMatch __pyx_r;
   __Pyx_RefNannyDeclarations
   Py_ssize_t __pyx_t_1;
   Py_ssize_t __pyx_t_2;
@@ -2714,13 +2714,13 @@ static __pyx_t_7fastseq_4_seq_CMatch __pyx_f_7fastseq_4_seq__find_longest_match(
   Py_ssize_t __pyx_t_9;
   PyObject *(*__pyx_t_10)(PyObject *);
   Py_ssize_t __pyx_t_11;
-  __pyx_t_7fastseq_4_seq_CMatch __pyx_t_12;
+  __pyx_t_5cyseq_4_seq_CMatch __pyx_t_12;
   int __pyx_lineno = 0;
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("_find_longest_match", 0);
 
-  /* "fastseq/_seq.pyx":104
+  /* "cyseq/_seq.pyx":104
  *     cdef unordered_map[Py_ssize_t, Py_ssize_t] newj2len
  * 
  *     besti, bestj, bestsize = alo, blo, 0             # <<<<<<<<<<<<<<
@@ -2734,7 +2734,7 @@ static __pyx_t_7fastseq_4_seq_CMatch __pyx_f_7fastseq_4_seq__find_longest_match(
   __pyx_v_bestj = __pyx_t_2;
   __pyx_v_bestsize = __pyx_t_3;
 
-  /* "fastseq/_seq.pyx":108
+  /* "cyseq/_seq.pyx":108
  *     # during an iteration of the loop, j2len[j] = length of longest
  *     # junk-free match ending with a[i-1] and b[j]
  *     nothing = []             # <<<<<<<<<<<<<<
@@ -2746,7 +2746,7 @@ static __pyx_t_7fastseq_4_seq_CMatch __pyx_f_7fastseq_4_seq__find_longest_match(
   __pyx_v_nothing = ((PyObject*)__pyx_t_4);
   __pyx_t_4 = 0;
 
-  /* "fastseq/_seq.pyx":109
+  /* "cyseq/_seq.pyx":109
  *     # junk-free match ending with a[i-1] and b[j]
  *     nothing = []
  *     for i in range(alo, ahi):             # <<<<<<<<<<<<<<
@@ -2758,7 +2758,7 @@ static __pyx_t_7fastseq_4_seq_CMatch __pyx_f_7fastseq_4_seq__find_longest_match(
   for (__pyx_t_1 = __pyx_v_alo; __pyx_t_1 < __pyx_t_2; __pyx_t_1+=1) {
     __pyx_v_i = __pyx_t_1;
 
-    /* "fastseq/_seq.pyx":111
+    /* "cyseq/_seq.pyx":111
  *     for i in range(alo, ahi):
  *          # we cannot do LCS on junk or non matchable
  *         cura = a[i]             # <<<<<<<<<<<<<<
@@ -2770,7 +2770,7 @@ static __pyx_t_7fastseq_4_seq_CMatch __pyx_f_7fastseq_4_seq__find_longest_match(
     __Pyx_XDECREF_SET(__pyx_v_cura, __pyx_t_4);
     __pyx_t_4 = 0;
 
-    /* "fastseq/_seq.pyx":112
+    /* "cyseq/_seq.pyx":112
  *          # we cannot do LCS on junk or non matchable
  *         cura = a[i]
  *         if cura < len_good and i in matchables:             # <<<<<<<<<<<<<<
@@ -2796,7 +2796,7 @@ static __pyx_t_7fastseq_4_seq_CMatch __pyx_f_7fastseq_4_seq__find_longest_match(
     __pyx_L6_bool_binop_done:;
     if (__pyx_t_5) {
 
-      /* "fastseq/_seq.pyx":115
+      /* "cyseq/_seq.pyx":115
  *             # look at all instances of a[i] in b; note that because
  *             # b2j has no junk keys, the loop is skipped if a[i] is junk
  *             for j in b2j.get(cura, nothing):             # <<<<<<<<<<<<<<
@@ -2867,7 +2867,7 @@ static __pyx_t_7fastseq_4_seq_CMatch __pyx_f_7fastseq_4_seq__find_longest_match(
         __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
         __pyx_v_j = __pyx_t_11;
 
-        /* "fastseq/_seq.pyx":117
+        /* "cyseq/_seq.pyx":117
  *             for j in b2j.get(cura, nothing):
  *                 # a[i] matches b[j]
  *                 if j < blo:             # <<<<<<<<<<<<<<
@@ -2877,7 +2877,7 @@ static __pyx_t_7fastseq_4_seq_CMatch __pyx_f_7fastseq_4_seq__find_longest_match(
         __pyx_t_5 = (__pyx_v_j < __pyx_v_blo);
         if (__pyx_t_5) {
 
-          /* "fastseq/_seq.pyx":118
+          /* "cyseq/_seq.pyx":118
  *                 # a[i] matches b[j]
  *                 if j < blo:
  *                     continue             # <<<<<<<<<<<<<<
@@ -2886,7 +2886,7 @@ static __pyx_t_7fastseq_4_seq_CMatch __pyx_f_7fastseq_4_seq__find_longest_match(
 */
           goto __pyx_L8_continue;
 
-          /* "fastseq/_seq.pyx":117
+          /* "cyseq/_seq.pyx":117
  *             for j in b2j.get(cura, nothing):
  *                 # a[i] matches b[j]
  *                 if j < blo:             # <<<<<<<<<<<<<<
@@ -2895,7 +2895,7 @@ static __pyx_t_7fastseq_4_seq_CMatch __pyx_f_7fastseq_4_seq__find_longest_match(
 */
         }
 
-        /* "fastseq/_seq.pyx":119
+        /* "cyseq/_seq.pyx":119
  *                 if j < blo:
  *                     continue
  *                 if j >= bhi:             # <<<<<<<<<<<<<<
@@ -2905,7 +2905,7 @@ static __pyx_t_7fastseq_4_seq_CMatch __pyx_f_7fastseq_4_seq__find_longest_match(
         __pyx_t_5 = (__pyx_v_j >= __pyx_v_bhi);
         if (__pyx_t_5) {
 
-          /* "fastseq/_seq.pyx":120
+          /* "cyseq/_seq.pyx":120
  *                     continue
  *                 if j >= bhi:
  *                     break             # <<<<<<<<<<<<<<
@@ -2914,7 +2914,7 @@ static __pyx_t_7fastseq_4_seq_CMatch __pyx_f_7fastseq_4_seq__find_longest_match(
 */
           goto __pyx_L9_break;
 
-          /* "fastseq/_seq.pyx":119
+          /* "cyseq/_seq.pyx":119
  *                 if j < blo:
  *                     continue
  *                 if j >= bhi:             # <<<<<<<<<<<<<<
@@ -2923,7 +2923,7 @@ static __pyx_t_7fastseq_4_seq_CMatch __pyx_f_7fastseq_4_seq__find_longest_match(
 */
         }
 
-        /* "fastseq/_seq.pyx":121
+        /* "cyseq/_seq.pyx":121
  *                 if j >= bhi:
  *                     break
  *                 k = newj2len[j] = j2len[j - 1] + 1             # <<<<<<<<<<<<<<
@@ -2934,7 +2934,7 @@ static __pyx_t_7fastseq_4_seq_CMatch __pyx_f_7fastseq_4_seq__find_longest_match(
         __pyx_v_k = __pyx_t_11;
         (__pyx_v_newj2len[__pyx_v_j]) = __pyx_t_11;
 
-        /* "fastseq/_seq.pyx":122
+        /* "cyseq/_seq.pyx":122
  *                     break
  *                 k = newj2len[j] = j2len[j - 1] + 1
  *                 if k > bestsize:             # <<<<<<<<<<<<<<
@@ -2944,7 +2944,7 @@ static __pyx_t_7fastseq_4_seq_CMatch __pyx_f_7fastseq_4_seq__find_longest_match(
         __pyx_t_5 = (__pyx_v_k > __pyx_v_bestsize);
         if (__pyx_t_5) {
 
-          /* "fastseq/_seq.pyx":123
+          /* "cyseq/_seq.pyx":123
  *                 k = newj2len[j] = j2len[j - 1] + 1
  *                 if k > bestsize:
  *                     besti = i - k + 1             # <<<<<<<<<<<<<<
@@ -2953,7 +2953,7 @@ static __pyx_t_7fastseq_4_seq_CMatch __pyx_f_7fastseq_4_seq__find_longest_match(
 */
           __pyx_v_besti = ((__pyx_v_i - __pyx_v_k) + 1);
 
-          /* "fastseq/_seq.pyx":124
+          /* "cyseq/_seq.pyx":124
  *                 if k > bestsize:
  *                     besti = i - k + 1
  *                     bestj = j - k + 1             # <<<<<<<<<<<<<<
@@ -2962,7 +2962,7 @@ static __pyx_t_7fastseq_4_seq_CMatch __pyx_f_7fastseq_4_seq__find_longest_match(
 */
           __pyx_v_bestj = ((__pyx_v_j - __pyx_v_k) + 1);
 
-          /* "fastseq/_seq.pyx":125
+          /* "cyseq/_seq.pyx":125
  *                     besti = i - k + 1
  *                     bestj = j - k + 1
  *                     bestsize = k             # <<<<<<<<<<<<<<
@@ -2971,7 +2971,7 @@ static __pyx_t_7fastseq_4_seq_CMatch __pyx_f_7fastseq_4_seq__find_longest_match(
 */
           __pyx_v_bestsize = __pyx_v_k;
 
-          /* "fastseq/_seq.pyx":122
+          /* "cyseq/_seq.pyx":122
  *                     break
  *                 k = newj2len[j] = j2len[j - 1] + 1
  *                 if k > bestsize:             # <<<<<<<<<<<<<<
@@ -2980,7 +2980,7 @@ static __pyx_t_7fastseq_4_seq_CMatch __pyx_f_7fastseq_4_seq__find_longest_match(
 */
         }
 
-        /* "fastseq/_seq.pyx":115
+        /* "cyseq/_seq.pyx":115
  *             # look at all instances of a[i] in b; note that because
  *             # b2j has no junk keys, the loop is skipped if a[i] is junk
  *             for j in b2j.get(cura, nothing):             # <<<<<<<<<<<<<<
@@ -2996,7 +2996,7 @@ static __pyx_t_7fastseq_4_seq_CMatch __pyx_f_7fastseq_4_seq__find_longest_match(
       goto __pyx_L13_for_end;
       __pyx_L13_for_end:;
 
-      /* "fastseq/_seq.pyx":112
+      /* "cyseq/_seq.pyx":112
  *          # we cannot do LCS on junk or non matchable
  *         cura = a[i]
  *         if cura < len_good and i in matchables:             # <<<<<<<<<<<<<<
@@ -3005,7 +3005,7 @@ static __pyx_t_7fastseq_4_seq_CMatch __pyx_f_7fastseq_4_seq__find_longest_match(
 */
     }
 
-    /* "fastseq/_seq.pyx":126
+    /* "cyseq/_seq.pyx":126
  *                     bestj = j - k + 1
  *                     bestsize = k
  *         j2len.swap(newj2len)             # <<<<<<<<<<<<<<
@@ -3014,7 +3014,7 @@ static __pyx_t_7fastseq_4_seq_CMatch __pyx_f_7fastseq_4_seq__find_longest_match(
 */
     __pyx_v_j2len.swap(__pyx_v_newj2len);
 
-    /* "fastseq/_seq.pyx":127
+    /* "cyseq/_seq.pyx":127
  *                     bestsize = k
  *         j2len.swap(newj2len)
  *         newj2len.clear()             # <<<<<<<<<<<<<<
@@ -3024,18 +3024,18 @@ static __pyx_t_7fastseq_4_seq_CMatch __pyx_f_7fastseq_4_seq__find_longest_match(
     __pyx_v_newj2len.clear();
   }
 
-  /* "fastseq/_seq.pyx":129
+  /* "cyseq/_seq.pyx":129
  *         newj2len.clear()
  * 
  *     return extend_match(besti, bestj, bestsize, a, b, alo, ahi, blo, bhi, matchables)             # <<<<<<<<<<<<<<
  * 
  * 
 */
-  __pyx_t_12 = __pyx_f_7fastseq_4_seq_extend_match(__pyx_v_besti, __pyx_v_bestj, __pyx_v_bestsize, __pyx_v_a, __pyx_v_b, __pyx_v_alo, __pyx_v_ahi, __pyx_v_blo, __pyx_v_bhi, __pyx_v_matchables); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 129, __pyx_L1_error)
+  __pyx_t_12 = __pyx_f_5cyseq_4_seq_extend_match(__pyx_v_besti, __pyx_v_bestj, __pyx_v_bestsize, __pyx_v_a, __pyx_v_b, __pyx_v_alo, __pyx_v_ahi, __pyx_v_blo, __pyx_v_bhi, __pyx_v_matchables); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 129, __pyx_L1_error)
   __pyx_r = __pyx_t_12;
   goto __pyx_L0;
 
-  /* "fastseq/_seq.pyx":55
+  /* "cyseq/_seq.pyx":55
  * 
  * 
  * cdef CMatch _find_longest_match(             # <<<<<<<<<<<<<<
@@ -3047,7 +3047,7 @@ static __pyx_t_7fastseq_4_seq_CMatch __pyx_f_7fastseq_4_seq__find_longest_match(
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_4);
   __Pyx_XDECREF(__pyx_t_6);
-  __Pyx_AddTraceback("fastseq._seq._find_longest_match", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("cyseq._seq._find_longest_match", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_pretend_to_initialize(&__pyx_r);
   __pyx_L0:;
   __Pyx_XDECREF(__pyx_v_nothing);
@@ -3056,7 +3056,7 @@ static __pyx_t_7fastseq_4_seq_CMatch __pyx_f_7fastseq_4_seq__find_longest_match(
   return __pyx_r;
 }
 
-/* "fastseq/_seq.pyx":132
+/* "cyseq/_seq.pyx":132
  * 
  * 
  * cdef CMatch extend_match(             # <<<<<<<<<<<<<<
@@ -3064,8 +3064,8 @@ static __pyx_t_7fastseq_4_seq_CMatch __pyx_f_7fastseq_4_seq__find_longest_match(
  *     Py_ssize_t bestj,
 */
 
-static __pyx_t_7fastseq_4_seq_CMatch __pyx_f_7fastseq_4_seq_extend_match(Py_ssize_t __pyx_v_besti, Py_ssize_t __pyx_v_bestj, Py_ssize_t __pyx_v_bestsize, PyObject *__pyx_v_a, PyObject *__pyx_v_b, Py_ssize_t __pyx_v_alo, Py_ssize_t __pyx_v_ahi, Py_ssize_t __pyx_v_blo, Py_ssize_t __pyx_v_bhi, PyObject *__pyx_v_matchables) {
-  __pyx_t_7fastseq_4_seq_CMatch __pyx_r;
+static __pyx_t_5cyseq_4_seq_CMatch __pyx_f_5cyseq_4_seq_extend_match(Py_ssize_t __pyx_v_besti, Py_ssize_t __pyx_v_bestj, Py_ssize_t __pyx_v_bestsize, PyObject *__pyx_v_a, PyObject *__pyx_v_b, Py_ssize_t __pyx_v_alo, Py_ssize_t __pyx_v_ahi, Py_ssize_t __pyx_v_blo, Py_ssize_t __pyx_v_bhi, PyObject *__pyx_v_matchables) {
+  __pyx_t_5cyseq_4_seq_CMatch __pyx_r;
   __Pyx_RefNannyDeclarations
   int __pyx_t_1;
   int __pyx_t_2;
@@ -3073,13 +3073,13 @@ static __pyx_t_7fastseq_4_seq_CMatch __pyx_f_7fastseq_4_seq_extend_match(Py_ssiz
   PyObject *__pyx_t_4 = NULL;
   PyObject *__pyx_t_5 = NULL;
   PyObject *__pyx_t_6 = NULL;
-  __pyx_t_7fastseq_4_seq_CMatch __pyx_t_7;
+  __pyx_t_5cyseq_4_seq_CMatch __pyx_t_7;
   int __pyx_lineno = 0;
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("extend_match", 0);
 
-  /* "fastseq/_seq.pyx":148
+  /* "cyseq/_seq.pyx":148
  *     tokens on each end. Return a new CMatch.
  *     """
  *     if bestsize:             # <<<<<<<<<<<<<<
@@ -3089,7 +3089,7 @@ static __pyx_t_7fastseq_4_seq_CMatch __pyx_f_7fastseq_4_seq_extend_match(Py_ssiz
   __pyx_t_1 = (__pyx_v_bestsize != 0);
   if (__pyx_t_1) {
 
-    /* "fastseq/_seq.pyx":149
+    /* "cyseq/_seq.pyx":149
  *     """
  *     if bestsize:
  *         while (besti > alo and bestj > blo             # <<<<<<<<<<<<<<
@@ -3104,7 +3104,7 @@ static __pyx_t_7fastseq_4_seq_CMatch __pyx_f_7fastseq_4_seq_extend_match(Py_ssiz
         goto __pyx_L6_bool_binop_done;
       }
 
-      /* "fastseq/_seq.pyx":150
+      /* "cyseq/_seq.pyx":150
  *     if bestsize:
  *         while (besti > alo and bestj > blo
  *                and a[besti - 1] == b[bestj - 1]             # <<<<<<<<<<<<<<
@@ -3118,7 +3118,7 @@ static __pyx_t_7fastseq_4_seq_CMatch __pyx_f_7fastseq_4_seq_extend_match(Py_ssiz
         goto __pyx_L6_bool_binop_done;
       }
 
-      /* "fastseq/_seq.pyx":151
+      /* "cyseq/_seq.pyx":151
  *         while (besti > alo and bestj > blo
  *                and a[besti - 1] == b[bestj - 1]
  *                and (besti - 1) in matchables):             # <<<<<<<<<<<<<<
@@ -3127,7 +3127,7 @@ static __pyx_t_7fastseq_4_seq_CMatch __pyx_f_7fastseq_4_seq_extend_match(Py_ssiz
 */
       __pyx_t_3 = (__pyx_v_besti - 1);
 
-      /* "fastseq/_seq.pyx":150
+      /* "cyseq/_seq.pyx":150
  *     if bestsize:
  *         while (besti > alo and bestj > blo
  *                and a[besti - 1] == b[bestj - 1]             # <<<<<<<<<<<<<<
@@ -3150,7 +3150,7 @@ static __pyx_t_7fastseq_4_seq_CMatch __pyx_f_7fastseq_4_seq_extend_match(Py_ssiz
         goto __pyx_L6_bool_binop_done;
       }
 
-      /* "fastseq/_seq.pyx":151
+      /* "cyseq/_seq.pyx":151
  *         while (besti > alo and bestj > blo
  *                and a[besti - 1] == b[bestj - 1]
  *                and (besti - 1) in matchables):             # <<<<<<<<<<<<<<
@@ -3165,7 +3165,7 @@ static __pyx_t_7fastseq_4_seq_CMatch __pyx_f_7fastseq_4_seq_extend_match(Py_ssiz
       __pyx_L6_bool_binop_done:;
       if (!__pyx_t_1) break;
 
-      /* "fastseq/_seq.pyx":153
+      /* "cyseq/_seq.pyx":153
  *                and (besti - 1) in matchables):
  * 
  *             besti -= 1             # <<<<<<<<<<<<<<
@@ -3174,7 +3174,7 @@ static __pyx_t_7fastseq_4_seq_CMatch __pyx_f_7fastseq_4_seq_extend_match(Py_ssiz
 */
       __pyx_v_besti = (__pyx_v_besti - 1);
 
-      /* "fastseq/_seq.pyx":154
+      /* "cyseq/_seq.pyx":154
  * 
  *             besti -= 1
  *             bestj -= 1             # <<<<<<<<<<<<<<
@@ -3183,7 +3183,7 @@ static __pyx_t_7fastseq_4_seq_CMatch __pyx_f_7fastseq_4_seq_extend_match(Py_ssiz
 */
       __pyx_v_bestj = (__pyx_v_bestj - 1);
 
-      /* "fastseq/_seq.pyx":155
+      /* "cyseq/_seq.pyx":155
  *             besti -= 1
  *             bestj -= 1
  *             bestsize += 1             # <<<<<<<<<<<<<<
@@ -3193,7 +3193,7 @@ static __pyx_t_7fastseq_4_seq_CMatch __pyx_f_7fastseq_4_seq_extend_match(Py_ssiz
       __pyx_v_bestsize = (__pyx_v_bestsize + 1);
     }
 
-    /* "fastseq/_seq.pyx":157
+    /* "cyseq/_seq.pyx":157
  *             bestsize += 1
  * 
  *         while (besti + bestsize < ahi and bestj + bestsize < bhi             # <<<<<<<<<<<<<<
@@ -3208,7 +3208,7 @@ static __pyx_t_7fastseq_4_seq_CMatch __pyx_f_7fastseq_4_seq_extend_match(Py_ssiz
         goto __pyx_L12_bool_binop_done;
       }
 
-      /* "fastseq/_seq.pyx":158
+      /* "cyseq/_seq.pyx":158
  * 
  *         while (besti + bestsize < ahi and bestj + bestsize < bhi
  *                and a[besti + bestsize] == b[bestj + bestsize]             # <<<<<<<<<<<<<<
@@ -3222,7 +3222,7 @@ static __pyx_t_7fastseq_4_seq_CMatch __pyx_f_7fastseq_4_seq_extend_match(Py_ssiz
         goto __pyx_L12_bool_binop_done;
       }
 
-      /* "fastseq/_seq.pyx":159
+      /* "cyseq/_seq.pyx":159
  *         while (besti + bestsize < ahi and bestj + bestsize < bhi
  *                and a[besti + bestsize] == b[bestj + bestsize]
  *                and (besti + bestsize) in matchables):             # <<<<<<<<<<<<<<
@@ -3231,7 +3231,7 @@ static __pyx_t_7fastseq_4_seq_CMatch __pyx_f_7fastseq_4_seq_extend_match(Py_ssiz
 */
       __pyx_t_3 = (__pyx_v_besti + __pyx_v_bestsize);
 
-      /* "fastseq/_seq.pyx":158
+      /* "cyseq/_seq.pyx":158
  * 
  *         while (besti + bestsize < ahi and bestj + bestsize < bhi
  *                and a[besti + bestsize] == b[bestj + bestsize]             # <<<<<<<<<<<<<<
@@ -3254,7 +3254,7 @@ static __pyx_t_7fastseq_4_seq_CMatch __pyx_f_7fastseq_4_seq_extend_match(Py_ssiz
         goto __pyx_L12_bool_binop_done;
       }
 
-      /* "fastseq/_seq.pyx":159
+      /* "cyseq/_seq.pyx":159
  *         while (besti + bestsize < ahi and bestj + bestsize < bhi
  *                and a[besti + bestsize] == b[bestj + bestsize]
  *                and (besti + bestsize) in matchables):             # <<<<<<<<<<<<<<
@@ -3269,7 +3269,7 @@ static __pyx_t_7fastseq_4_seq_CMatch __pyx_f_7fastseq_4_seq_extend_match(Py_ssiz
       __pyx_L12_bool_binop_done:;
       if (!__pyx_t_1) break;
 
-      /* "fastseq/_seq.pyx":161
+      /* "cyseq/_seq.pyx":161
  *                and (besti + bestsize) in matchables):
  * 
  *             bestsize += 1             # <<<<<<<<<<<<<<
@@ -3279,7 +3279,7 @@ static __pyx_t_7fastseq_4_seq_CMatch __pyx_f_7fastseq_4_seq_extend_match(Py_ssiz
       __pyx_v_bestsize = (__pyx_v_bestsize + 1);
     }
 
-    /* "fastseq/_seq.pyx":148
+    /* "cyseq/_seq.pyx":148
  *     tokens on each end. Return a new CMatch.
  *     """
  *     if bestsize:             # <<<<<<<<<<<<<<
@@ -3288,7 +3288,7 @@ static __pyx_t_7fastseq_4_seq_CMatch __pyx_f_7fastseq_4_seq_extend_match(Py_ssiz
 */
   }
 
-  /* "fastseq/_seq.pyx":163
+  /* "cyseq/_seq.pyx":163
  *             bestsize += 1
  * 
  *     return CMatch(besti, bestj, bestsize)             # <<<<<<<<<<<<<<
@@ -3301,7 +3301,7 @@ static __pyx_t_7fastseq_4_seq_CMatch __pyx_f_7fastseq_4_seq_extend_match(Py_ssiz
   __pyx_r = __pyx_t_7;
   goto __pyx_L0;
 
-  /* "fastseq/_seq.pyx":132
+  /* "cyseq/_seq.pyx":132
  * 
  * 
  * cdef CMatch extend_match(             # <<<<<<<<<<<<<<
@@ -3314,14 +3314,14 @@ static __pyx_t_7fastseq_4_seq_CMatch __pyx_f_7fastseq_4_seq_extend_match(Py_ssiz
   __Pyx_XDECREF(__pyx_t_4);
   __Pyx_XDECREF(__pyx_t_5);
   __Pyx_XDECREF(__pyx_t_6);
-  __Pyx_AddTraceback("fastseq._seq.extend_match", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("cyseq._seq.extend_match", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_pretend_to_initialize(&__pyx_r);
   __pyx_L0:;
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-/* "fastseq/_seq.pyx":166
+/* "cyseq/_seq.pyx":166
  * 
  * 
  * def find_longest_match(             # <<<<<<<<<<<<<<
@@ -3330,16 +3330,16 @@ static __pyx_t_7fastseq_4_seq_CMatch __pyx_f_7fastseq_4_seq_extend_match(Py_ssiz
 */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_7fastseq_4_seq_1find_longest_match(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_5cyseq_4_seq_1find_longest_match(PyObject *__pyx_self, 
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
 PyObject *__pyx_args, PyObject *__pyx_kwds
 #endif
 ); /*proto*/
-PyDoc_STRVAR(__pyx_doc_7fastseq_4_seq_find_longest_match, "\n    Find longest matching block of a and b in a[alo:ahi] and b[blo:bhi].\n\n    `b2j` is a mapping of b high token ids -> list of position in b\n    `len_good` is such that token ids smaller than `_good_good` are treated as\n    good, non-junk tokens. `matchables` is a set of matchable positions.\n    Positions absent from this set are ignored.\n\n    Return (i,j,k) Match tuple where:\n        \"i\" in the start in \"a\"\n        \"j\" in the start in \"b\"\n        \"k\" in the size of the match\n\n    and such that a[i:i+k] is equal to b[j:j+k], where\n        alo <= i <= i+k <= ahi\n        blo <= j <= j+k <= bhi\n\n    and for all (i',j',k') matchable token positions meeting those conditions,\n        k >= k'\n        i <= i'\n        and if i == i', j <= j'\n\n    In other words, of all maximal matching blocks, return one that starts\n    earliest in a, and of all those maximal matching blocks that start earliest\n    in a, return the one that starts earliest in b.\n\n    First the longest matching block (aka contiguous substring) is determined\n    where no junk element appears in the block. Then that block is extended as\n    far as possible by matching other tokens including junk on both sides. So\n    the resulting block never matches on junk.\n\n    If no blocks match, return Match(alo, blo, 0).\n    ");
-static PyMethodDef __pyx_mdef_7fastseq_4_seq_1find_longest_match = {"find_longest_match", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_7fastseq_4_seq_1find_longest_match, __Pyx_METH_FASTCALL|METH_KEYWORDS, __pyx_doc_7fastseq_4_seq_find_longest_match};
-static PyObject *__pyx_pw_7fastseq_4_seq_1find_longest_match(PyObject *__pyx_self, 
+PyDoc_STRVAR(__pyx_doc_5cyseq_4_seq_find_longest_match, "\n    Find longest matching block of a and b in a[alo:ahi] and b[blo:bhi].\n\n    `b2j` is a mapping of b high token ids -> list of position in b\n    `len_good` is such that token ids smaller than `_good_good` are treated as\n    good, non-junk tokens. `matchables` is a set of matchable positions.\n    Positions absent from this set are ignored.\n\n    Return (i,j,k) Match tuple where:\n        \"i\" in the start in \"a\"\n        \"j\" in the start in \"b\"\n        \"k\" in the size of the match\n\n    and such that a[i:i+k] is equal to b[j:j+k], where\n        alo <= i <= i+k <= ahi\n        blo <= j <= j+k <= bhi\n\n    and for all (i',j',k') matchable token positions meeting those conditions,\n        k >= k'\n        i <= i'\n        and if i == i', j <= j'\n\n    In other words, of all maximal matching blocks, return one that starts\n    earliest in a, and of all those maximal matching blocks that start earliest\n    in a, return the one that starts earliest in b.\n\n    First the longest matching block (aka contiguous substring) is determined\n    where no junk element appears in the block. Then that block is extended as\n    far as possible by matching other tokens including junk on both sides. So\n    the resulting block never matches on junk.\n\n    If no blocks match, return Match(alo, blo, 0).\n    ");
+static PyMethodDef __pyx_mdef_5cyseq_4_seq_1find_longest_match = {"find_longest_match", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_5cyseq_4_seq_1find_longest_match, __Pyx_METH_FASTCALL|METH_KEYWORDS, __pyx_doc_5cyseq_4_seq_find_longest_match};
+static PyObject *__pyx_pw_5cyseq_4_seq_1find_longest_match(PyObject *__pyx_self, 
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -3465,11 +3465,11 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   for (Py_ssize_t __pyx_temp=0; __pyx_temp < (Py_ssize_t)(sizeof(values)/sizeof(values[0])); ++__pyx_temp) {
     Py_XDECREF(values[__pyx_temp]);
   }
-  __Pyx_AddTraceback("fastseq._seq.find_longest_match", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("cyseq._seq.find_longest_match", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_7fastseq_4_seq_find_longest_match(__pyx_self, __pyx_v_a, __pyx_v_b, __pyx_v_alo, __pyx_v_ahi, __pyx_v_blo, __pyx_v_bhi, __pyx_v_b2j, __pyx_v_len_good, __pyx_v_matchables);
+  __pyx_r = __pyx_pf_5cyseq_4_seq_find_longest_match(__pyx_self, __pyx_v_a, __pyx_v_b, __pyx_v_alo, __pyx_v_ahi, __pyx_v_blo, __pyx_v_bhi, __pyx_v_b2j, __pyx_v_len_good, __pyx_v_matchables);
 
   /* function exit code */
   for (Py_ssize_t __pyx_temp=0; __pyx_temp < (Py_ssize_t)(sizeof(values)/sizeof(values[0])); ++__pyx_temp) {
@@ -3479,11 +3479,11 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_7fastseq_4_seq_find_longest_match(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_a, PyObject *__pyx_v_b, Py_ssize_t __pyx_v_alo, Py_ssize_t __pyx_v_ahi, Py_ssize_t __pyx_v_blo, Py_ssize_t __pyx_v_bhi, PyObject *__pyx_v_b2j, Py_ssize_t __pyx_v_len_good, PyObject *__pyx_v_matchables) {
-  __pyx_t_7fastseq_4_seq_CMatch __pyx_v_x;
+static PyObject *__pyx_pf_5cyseq_4_seq_find_longest_match(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_a, PyObject *__pyx_v_b, Py_ssize_t __pyx_v_alo, Py_ssize_t __pyx_v_ahi, Py_ssize_t __pyx_v_blo, Py_ssize_t __pyx_v_bhi, PyObject *__pyx_v_b2j, Py_ssize_t __pyx_v_len_good, PyObject *__pyx_v_matchables) {
+  __pyx_t_5cyseq_4_seq_CMatch __pyx_v_x;
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
-  __pyx_t_7fastseq_4_seq_CMatch __pyx_t_1;
+  __pyx_t_5cyseq_4_seq_CMatch __pyx_t_1;
   PyObject *__pyx_t_2 = NULL;
   PyObject *__pyx_t_3 = NULL;
   PyObject *__pyx_t_4 = NULL;
@@ -3496,17 +3496,17 @@ static PyObject *__pyx_pf_7fastseq_4_seq_find_longest_match(CYTHON_UNUSED PyObje
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("find_longest_match", 0);
 
-  /* "fastseq/_seq.pyx":210
+  /* "cyseq/_seq.pyx":210
  *     If no blocks match, return Match(alo, blo, 0).
  *     """
  *     x = _find_longest_match(a, b, alo, ahi, blo, bhi, b2j, len_good, matchables)             # <<<<<<<<<<<<<<
  *     return Match(x.a, x.b, x.size)
  * 
 */
-  __pyx_t_1 = __pyx_f_7fastseq_4_seq__find_longest_match(__pyx_v_a, __pyx_v_b, __pyx_v_alo, __pyx_v_ahi, __pyx_v_blo, __pyx_v_bhi, __pyx_v_b2j, __pyx_v_len_good, __pyx_v_matchables); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 210, __pyx_L1_error)
+  __pyx_t_1 = __pyx_f_5cyseq_4_seq__find_longest_match(__pyx_v_a, __pyx_v_b, __pyx_v_alo, __pyx_v_ahi, __pyx_v_blo, __pyx_v_bhi, __pyx_v_b2j, __pyx_v_len_good, __pyx_v_matchables); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 210, __pyx_L1_error)
   __pyx_v_x = __pyx_t_1;
 
-  /* "fastseq/_seq.pyx":211
+  /* "cyseq/_seq.pyx":211
  *     """
  *     x = _find_longest_match(a, b, alo, ahi, blo, bhi, b2j, len_good, matchables)
  *     return Match(x.a, x.b, x.size)             # <<<<<<<<<<<<<<
@@ -3550,7 +3550,7 @@ static PyObject *__pyx_pf_7fastseq_4_seq_find_longest_match(CYTHON_UNUSED PyObje
   __pyx_t_2 = 0;
   goto __pyx_L0;
 
-  /* "fastseq/_seq.pyx":166
+  /* "cyseq/_seq.pyx":166
  * 
  * 
  * def find_longest_match(             # <<<<<<<<<<<<<<
@@ -3566,7 +3566,7 @@ static PyObject *__pyx_pf_7fastseq_4_seq_find_longest_match(CYTHON_UNUSED PyObje
   __Pyx_XDECREF(__pyx_t_5);
   __Pyx_XDECREF(__pyx_t_6);
   __Pyx_XDECREF(__pyx_t_7);
-  __Pyx_AddTraceback("fastseq._seq.find_longest_match", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("cyseq._seq.find_longest_match", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -3574,7 +3574,7 @@ static PyObject *__pyx_pf_7fastseq_4_seq_find_longest_match(CYTHON_UNUSED PyObje
   return __pyx_r;
 }
 
-/* "fastseq/_seq.pyx":214
+/* "cyseq/_seq.pyx":214
  * 
  * 
  * def match_blocks(             # <<<<<<<<<<<<<<
@@ -3583,16 +3583,16 @@ static PyObject *__pyx_pf_7fastseq_4_seq_find_longest_match(CYTHON_UNUSED PyObje
 */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_7fastseq_4_seq_3match_blocks(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_5cyseq_4_seq_3match_blocks(PyObject *__pyx_self, 
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
 PyObject *__pyx_args, PyObject *__pyx_kwds
 #endif
 ); /*proto*/
-PyDoc_STRVAR(__pyx_doc_7fastseq_4_seq_2match_blocks, "\n    Return a list of matching block Match triples describing matching\n    subsequences of `a` in `b` starting from the `a_start` position in `a` up to\n    the `a_end` position in `a`.\n\n    `b2j` is a mapping of b \"high\" token ids -> list of positions in b, e.g. a\n    posting list.\n\n    `len_good` is such that token ids smaller than `len_good` are treated as\n    important, non-junk tokens.\n\n    `matchables` is a set of matchable positions. Positions absent from this set\n    are ignored.\n\n    Each triple is of the form (i, j, n), and means that a[i:i+n] == b[j:j+n].\n    The triples are monotonically increasing in i and in j.  It is also\n    guaranteed that adjacent triples never describe adjacent equal blocks.\n    Instead adjacent blocks are merged and collapsed in a single block.\n    ");
-static PyMethodDef __pyx_mdef_7fastseq_4_seq_3match_blocks = {"match_blocks", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_7fastseq_4_seq_3match_blocks, __Pyx_METH_FASTCALL|METH_KEYWORDS, __pyx_doc_7fastseq_4_seq_2match_blocks};
-static PyObject *__pyx_pw_7fastseq_4_seq_3match_blocks(PyObject *__pyx_self, 
+PyDoc_STRVAR(__pyx_doc_5cyseq_4_seq_2match_blocks, "\n    Return a list of matching block Match triples describing matching\n    subsequences of `a` in `b` starting from the `a_start` position in `a` up to\n    the `a_end` position in `a`.\n\n    `b2j` is a mapping of b \"high\" token ids -> list of positions in b, e.g. a\n    posting list.\n\n    `len_good` is such that token ids smaller than `len_good` are treated as\n    important, non-junk tokens.\n\n    `matchables` is a set of matchable positions. Positions absent from this set\n    are ignored.\n\n    Each triple is of the form (i, j, n), and means that a[i:i+n] == b[j:j+n].\n    The triples are monotonically increasing in i and in j.  It is also\n    guaranteed that adjacent triples never describe adjacent equal blocks.\n    Instead adjacent blocks are merged and collapsed in a single block.\n    ");
+static PyMethodDef __pyx_mdef_5cyseq_4_seq_3match_blocks = {"match_blocks", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_5cyseq_4_seq_3match_blocks, __Pyx_METH_FASTCALL|METH_KEYWORDS, __pyx_doc_5cyseq_4_seq_2match_blocks};
+static PyObject *__pyx_pw_5cyseq_4_seq_3match_blocks(PyObject *__pyx_self, 
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -3714,11 +3714,11 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   }
   __Pyx_DECREF(__pyx_v_args); __pyx_v_args = 0;
   __Pyx_XDECREF(__pyx_v_kwargs); __pyx_v_kwargs = 0;
-  __Pyx_AddTraceback("fastseq._seq.match_blocks", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("cyseq._seq.match_blocks", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_7fastseq_4_seq_2match_blocks(__pyx_self, __pyx_v_a, __pyx_v_b, __pyx_v_a_start, __pyx_v_a_end, __pyx_v_b2j, __pyx_v_len_good, __pyx_v_matchables, __pyx_v_args, __pyx_v_kwargs);
+  __pyx_r = __pyx_pf_5cyseq_4_seq_2match_blocks(__pyx_self, __pyx_v_a, __pyx_v_b, __pyx_v_a_start, __pyx_v_a_end, __pyx_v_b2j, __pyx_v_len_good, __pyx_v_matchables, __pyx_v_args, __pyx_v_kwargs);
 
   /* function exit code */
   for (Py_ssize_t __pyx_temp=0; __pyx_temp < (Py_ssize_t)(sizeof(values)/sizeof(values[0])); ++__pyx_temp) {
@@ -3730,7 +3730,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_7fastseq_4_seq_2match_blocks(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_a, PyObject *__pyx_v_b, Py_ssize_t __pyx_v_a_start, Py_ssize_t __pyx_v_a_end, PyObject *__pyx_v_b2j, Py_ssize_t __pyx_v_len_good, PyObject *__pyx_v_matchables, CYTHON_UNUSED PyObject *__pyx_v_args, CYTHON_UNUSED PyObject *__pyx_v_kwargs) {
+static PyObject *__pyx_pf_5cyseq_4_seq_2match_blocks(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_a, PyObject *__pyx_v_b, Py_ssize_t __pyx_v_a_start, Py_ssize_t __pyx_v_a_end, PyObject *__pyx_v_b2j, Py_ssize_t __pyx_v_len_good, PyObject *__pyx_v_matchables, CYTHON_UNUSED PyObject *__pyx_v_args, CYTHON_UNUSED PyObject *__pyx_v_kwargs) {
   Py_ssize_t __pyx_v_i;
   Py_ssize_t __pyx_v_j;
   Py_ssize_t __pyx_v_k;
@@ -3744,24 +3744,24 @@ static PyObject *__pyx_pf_7fastseq_4_seq_2match_blocks(CYTHON_UNUSED PyObject *_
   Py_ssize_t __pyx_v_ahi;
   Py_ssize_t __pyx_v_blo;
   Py_ssize_t __pyx_v_bhi;
-  std::vector<__pyx_t_7fastseq_4_seq_MatchingBlockQueueElem>  __pyx_v_queue;
-  std::vector<__pyx_t_7fastseq_4_seq_CMatch>  __pyx_v_matching_blocks;
-  __pyx_t_7fastseq_4_seq_MatchingBlockQueueElem __pyx_v_elem;
-  __pyx_t_7fastseq_4_seq_CMatch __pyx_v_x;
+  std::vector<__pyx_t_5cyseq_4_seq_MatchingBlockQueueElem>  __pyx_v_queue;
+  std::vector<__pyx_t_5cyseq_4_seq_CMatch>  __pyx_v_matching_blocks;
+  __pyx_t_5cyseq_4_seq_MatchingBlockQueueElem __pyx_v_elem;
+  __pyx_t_5cyseq_4_seq_CMatch __pyx_v_x;
   PyObject *__pyx_v_non_adjacent = NULL;
-  __pyx_t_7fastseq_4_seq_CMatch __pyx_v_match;
+  __pyx_t_5cyseq_4_seq_CMatch __pyx_v_match;
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
-  __pyx_t_7fastseq_4_seq_MatchingBlockQueueElem __pyx_t_1;
+  __pyx_t_5cyseq_4_seq_MatchingBlockQueueElem __pyx_t_1;
   Py_ssize_t __pyx_t_2;
   int __pyx_t_3;
   Py_ssize_t __pyx_t_4;
   Py_ssize_t __pyx_t_5;
   Py_ssize_t __pyx_t_6;
-  __pyx_t_7fastseq_4_seq_CMatch __pyx_t_7;
+  __pyx_t_5cyseq_4_seq_CMatch __pyx_t_7;
   int __pyx_t_8;
   PyObject *__pyx_t_9 = NULL;
-  std::vector<__pyx_t_7fastseq_4_seq_CMatch> ::iterator __pyx_t_10;
+  std::vector<__pyx_t_5cyseq_4_seq_CMatch> ::iterator __pyx_t_10;
   PyObject *__pyx_t_11 = NULL;
   PyObject *__pyx_t_12 = NULL;
   PyObject *__pyx_t_13 = NULL;
@@ -3774,7 +3774,7 @@ static PyObject *__pyx_pf_7fastseq_4_seq_2match_blocks(CYTHON_UNUSED PyObject *_
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("match_blocks", 0);
 
-  /* "fastseq/_seq.pyx":252
+  /* "cyseq/_seq.pyx":252
  *     # still need to look at and append partial results to matching_blocks in a
  *     # loop. The matches are sorted at the end.
  *     queue.push_back(MatchingBlockQueueElem(a_start, a_end, 0, len(b)))             # <<<<<<<<<<<<<<
@@ -3793,7 +3793,7 @@ static PyObject *__pyx_pf_7fastseq_4_seq_2match_blocks(CYTHON_UNUSED PyObject *_
     __PYX_ERR(0, 252, __pyx_L1_error)
   }
 
-  /* "fastseq/_seq.pyx":253
+  /* "cyseq/_seq.pyx":253
  *     # loop. The matches are sorted at the end.
  *     queue.push_back(MatchingBlockQueueElem(a_start, a_end, 0, len(b)))
  *     while not queue.empty():             # <<<<<<<<<<<<<<
@@ -3804,7 +3804,7 @@ static PyObject *__pyx_pf_7fastseq_4_seq_2match_blocks(CYTHON_UNUSED PyObject *_
     __pyx_t_3 = (!__pyx_v_queue.empty());
     if (!__pyx_t_3) break;
 
-    /* "fastseq/_seq.pyx":254
+    /* "cyseq/_seq.pyx":254
  *     queue.push_back(MatchingBlockQueueElem(a_start, a_end, 0, len(b)))
  *     while not queue.empty():
  *         elem = queue.back()             # <<<<<<<<<<<<<<
@@ -3813,7 +3813,7 @@ static PyObject *__pyx_pf_7fastseq_4_seq_2match_blocks(CYTHON_UNUSED PyObject *_
 */
     __pyx_v_elem = __pyx_v_queue.back();
 
-    /* "fastseq/_seq.pyx":255
+    /* "cyseq/_seq.pyx":255
  *     while not queue.empty():
  *         elem = queue.back()
  *         alo, ahi, blo, bhi = elem.alo, elem.ahi, elem.blo, elem.bhi             # <<<<<<<<<<<<<<
@@ -3829,7 +3829,7 @@ static PyObject *__pyx_pf_7fastseq_4_seq_2match_blocks(CYTHON_UNUSED PyObject *_
     __pyx_v_blo = __pyx_t_5;
     __pyx_v_bhi = __pyx_t_6;
 
-    /* "fastseq/_seq.pyx":256
+    /* "cyseq/_seq.pyx":256
  *         elem = queue.back()
  *         alo, ahi, blo, bhi = elem.alo, elem.ahi, elem.blo, elem.bhi
  *         queue.pop_back()             # <<<<<<<<<<<<<<
@@ -3838,17 +3838,17 @@ static PyObject *__pyx_pf_7fastseq_4_seq_2match_blocks(CYTHON_UNUSED PyObject *_
 */
     __pyx_v_queue.pop_back();
 
-    /* "fastseq/_seq.pyx":257
+    /* "cyseq/_seq.pyx":257
  *         alo, ahi, blo, bhi = elem.alo, elem.ahi, elem.blo, elem.bhi
  *         queue.pop_back()
  *         x = _find_longest_match(a, b, alo, ahi, blo, bhi, b2j, len_good, matchables)             # <<<<<<<<<<<<<<
  *         i, j, k = x.a, x.b, x.size
  *         # a[alo:i] vs b[blo:j] unknown
 */
-    __pyx_t_7 = __pyx_f_7fastseq_4_seq__find_longest_match(__pyx_v_a, __pyx_v_b, __pyx_v_alo, __pyx_v_ahi, __pyx_v_blo, __pyx_v_bhi, __pyx_v_b2j, __pyx_v_len_good, __pyx_v_matchables); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 257, __pyx_L1_error)
+    __pyx_t_7 = __pyx_f_5cyseq_4_seq__find_longest_match(__pyx_v_a, __pyx_v_b, __pyx_v_alo, __pyx_v_ahi, __pyx_v_blo, __pyx_v_bhi, __pyx_v_b2j, __pyx_v_len_good, __pyx_v_matchables); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 257, __pyx_L1_error)
     __pyx_v_x = __pyx_t_7;
 
-    /* "fastseq/_seq.pyx":258
+    /* "cyseq/_seq.pyx":258
  *         queue.pop_back()
  *         x = _find_longest_match(a, b, alo, ahi, blo, bhi, b2j, len_good, matchables)
  *         i, j, k = x.a, x.b, x.size             # <<<<<<<<<<<<<<
@@ -3862,7 +3862,7 @@ static PyObject *__pyx_pf_7fastseq_4_seq_2match_blocks(CYTHON_UNUSED PyObject *_
     __pyx_v_j = __pyx_t_5;
     __pyx_v_k = __pyx_t_4;
 
-    /* "fastseq/_seq.pyx":262
+    /* "cyseq/_seq.pyx":262
  *         # a[i:i+k] same as b[j:j+k]
  *         # a[i+k:ahi] vs b[j+k:bhi] unknown
  *         if k:   # if k is 0, there was no matching block             # <<<<<<<<<<<<<<
@@ -3872,7 +3872,7 @@ static PyObject *__pyx_pf_7fastseq_4_seq_2match_blocks(CYTHON_UNUSED PyObject *_
     __pyx_t_3 = (__pyx_v_k != 0);
     if (__pyx_t_3) {
 
-      /* "fastseq/_seq.pyx":263
+      /* "cyseq/_seq.pyx":263
  *         # a[i+k:ahi] vs b[j+k:bhi] unknown
  *         if k:   # if k is 0, there was no matching block
  *             matching_blocks.push_back(x)             # <<<<<<<<<<<<<<
@@ -3886,7 +3886,7 @@ static PyObject *__pyx_pf_7fastseq_4_seq_2match_blocks(CYTHON_UNUSED PyObject *_
         __PYX_ERR(0, 263, __pyx_L1_error)
       }
 
-      /* "fastseq/_seq.pyx":264
+      /* "cyseq/_seq.pyx":264
  *         if k:   # if k is 0, there was no matching block
  *             matching_blocks.push_back(x)
  *             if alo < i and blo < j:             # <<<<<<<<<<<<<<
@@ -3904,7 +3904,7 @@ static PyObject *__pyx_pf_7fastseq_4_seq_2match_blocks(CYTHON_UNUSED PyObject *_
       __pyx_L7_bool_binop_done:;
       if (__pyx_t_3) {
 
-        /* "fastseq/_seq.pyx":266
+        /* "cyseq/_seq.pyx":266
  *             if alo < i and blo < j:
  *                 # there is unprocessed things remaining to the left
  *                 queue.push_back(MatchingBlockQueueElem(alo, i, blo, j))             # <<<<<<<<<<<<<<
@@ -3922,7 +3922,7 @@ static PyObject *__pyx_pf_7fastseq_4_seq_2match_blocks(CYTHON_UNUSED PyObject *_
           __PYX_ERR(0, 266, __pyx_L1_error)
         }
 
-        /* "fastseq/_seq.pyx":264
+        /* "cyseq/_seq.pyx":264
  *         if k:   # if k is 0, there was no matching block
  *             matching_blocks.push_back(x)
  *             if alo < i and blo < j:             # <<<<<<<<<<<<<<
@@ -3931,7 +3931,7 @@ static PyObject *__pyx_pf_7fastseq_4_seq_2match_blocks(CYTHON_UNUSED PyObject *_
 */
       }
 
-      /* "fastseq/_seq.pyx":267
+      /* "cyseq/_seq.pyx":267
  *                 # there is unprocessed things remaining to the left
  *                 queue.push_back(MatchingBlockQueueElem(alo, i, blo, j))
  *             if i + k < ahi and j + k < bhi:             # <<<<<<<<<<<<<<
@@ -3949,7 +3949,7 @@ static PyObject *__pyx_pf_7fastseq_4_seq_2match_blocks(CYTHON_UNUSED PyObject *_
       __pyx_L10_bool_binop_done:;
       if (__pyx_t_3) {
 
-        /* "fastseq/_seq.pyx":269
+        /* "cyseq/_seq.pyx":269
  *             if i + k < ahi and j + k < bhi:
  *                 # there is unprocessed things remaining to the right
  *                 queue.push_back(MatchingBlockQueueElem(i+k, ahi, j+k, bhi))             # <<<<<<<<<<<<<<
@@ -3967,7 +3967,7 @@ static PyObject *__pyx_pf_7fastseq_4_seq_2match_blocks(CYTHON_UNUSED PyObject *_
           __PYX_ERR(0, 269, __pyx_L1_error)
         }
 
-        /* "fastseq/_seq.pyx":267
+        /* "cyseq/_seq.pyx":267
  *                 # there is unprocessed things remaining to the left
  *                 queue.push_back(MatchingBlockQueueElem(alo, i, blo, j))
  *             if i + k < ahi and j + k < bhi:             # <<<<<<<<<<<<<<
@@ -3976,7 +3976,7 @@ static PyObject *__pyx_pf_7fastseq_4_seq_2match_blocks(CYTHON_UNUSED PyObject *_
 */
       }
 
-      /* "fastseq/_seq.pyx":262
+      /* "cyseq/_seq.pyx":262
  *         # a[i:i+k] same as b[j:j+k]
  *         # a[i+k:ahi] vs b[j+k:bhi] unknown
  *         if k:   # if k is 0, there was no matching block             # <<<<<<<<<<<<<<
@@ -3986,7 +3986,7 @@ static PyObject *__pyx_pf_7fastseq_4_seq_2match_blocks(CYTHON_UNUSED PyObject *_
     }
   }
 
-  /* "fastseq/_seq.pyx":271
+  /* "cyseq/_seq.pyx":271
  *                 queue.push_back(MatchingBlockQueueElem(i+k, ahi, j+k, bhi))
  * 
  *     cpp_sort(matching_blocks.begin(), matching_blocks.end(), &CMatch_sorter)             # <<<<<<<<<<<<<<
@@ -3994,13 +3994,13 @@ static PyObject *__pyx_pf_7fastseq_4_seq_2match_blocks(CYTHON_UNUSED PyObject *_
  *     # collapse adjacent blocks
 */
   try {
-    std::sort<std::vector<__pyx_t_7fastseq_4_seq_CMatch> ::iterator,int (*)(__pyx_t_7fastseq_4_seq_CMatch const &, __pyx_t_7fastseq_4_seq_CMatch const &)>(__pyx_v_matching_blocks.begin(), __pyx_v_matching_blocks.end(), (&__pyx_f_7fastseq_4_seq_CMatch_sorter));
+    std::sort<std::vector<__pyx_t_5cyseq_4_seq_CMatch> ::iterator,int (*)(__pyx_t_5cyseq_4_seq_CMatch const &, __pyx_t_5cyseq_4_seq_CMatch const &)>(__pyx_v_matching_blocks.begin(), __pyx_v_matching_blocks.end(), (&__pyx_f_5cyseq_4_seq_CMatch_sorter));
   } catch(...) {
     __Pyx_CppExn2PyErr();
     __PYX_ERR(0, 271, __pyx_L1_error)
   }
 
-  /* "fastseq/_seq.pyx":274
+  /* "cyseq/_seq.pyx":274
  * 
  *     # collapse adjacent blocks
  *     i1 = j1 = k1 = 0             # <<<<<<<<<<<<<<
@@ -4011,7 +4011,7 @@ static PyObject *__pyx_pf_7fastseq_4_seq_2match_blocks(CYTHON_UNUSED PyObject *_
   __pyx_v_j1 = 0;
   __pyx_v_k1 = 0;
 
-  /* "fastseq/_seq.pyx":275
+  /* "cyseq/_seq.pyx":275
  *     # collapse adjacent blocks
  *     i1 = j1 = k1 = 0
  *     non_adjacent = []             # <<<<<<<<<<<<<<
@@ -4023,7 +4023,7 @@ static PyObject *__pyx_pf_7fastseq_4_seq_2match_blocks(CYTHON_UNUSED PyObject *_
   __pyx_v_non_adjacent = ((PyObject*)__pyx_t_9);
   __pyx_t_9 = 0;
 
-  /* "fastseq/_seq.pyx":276
+  /* "cyseq/_seq.pyx":276
  *     i1 = j1 = k1 = 0
  *     non_adjacent = []
  *     for match in matching_blocks:             # <<<<<<<<<<<<<<
@@ -4035,7 +4035,7 @@ static PyObject *__pyx_pf_7fastseq_4_seq_2match_blocks(CYTHON_UNUSED PyObject *_
     __pyx_t_7 = *__pyx_t_10;
     __pyx_v_match = __pyx_t_7;
 
-    /* "fastseq/_seq.pyx":277
+    /* "cyseq/_seq.pyx":277
  *     non_adjacent = []
  *     for match in matching_blocks:
  *         i2, j2, k2 = match.a, match.b, match.size             # <<<<<<<<<<<<<<
@@ -4049,7 +4049,7 @@ static PyObject *__pyx_pf_7fastseq_4_seq_2match_blocks(CYTHON_UNUSED PyObject *_
     __pyx_v_j2 = __pyx_t_5;
     __pyx_v_k2 = __pyx_t_6;
 
-    /* "fastseq/_seq.pyx":279
+    /* "cyseq/_seq.pyx":279
  *         i2, j2, k2 = match.a, match.b, match.size
  *         # Is this block adjacent to i1, j1, k1?
  *         if i1 + k1 == i2 and j1 + k1 == j2:             # <<<<<<<<<<<<<<
@@ -4067,7 +4067,7 @@ static PyObject *__pyx_pf_7fastseq_4_seq_2match_blocks(CYTHON_UNUSED PyObject *_
     __pyx_L15_bool_binop_done:;
     if (__pyx_t_3) {
 
-      /* "fastseq/_seq.pyx":283
+      /* "cyseq/_seq.pyx":283
  *             # the first block by the length of the second, and the first
  *             # block so lengthened remains the block to compare against.
  *             k1 += k2             # <<<<<<<<<<<<<<
@@ -4076,7 +4076,7 @@ static PyObject *__pyx_pf_7fastseq_4_seq_2match_blocks(CYTHON_UNUSED PyObject *_
 */
       __pyx_v_k1 = (__pyx_v_k1 + __pyx_v_k2);
 
-      /* "fastseq/_seq.pyx":279
+      /* "cyseq/_seq.pyx":279
  *         i2, j2, k2 = match.a, match.b, match.size
  *         # Is this block adjacent to i1, j1, k1?
  *         if i1 + k1 == i2 and j1 + k1 == j2:             # <<<<<<<<<<<<<<
@@ -4086,7 +4086,7 @@ static PyObject *__pyx_pf_7fastseq_4_seq_2match_blocks(CYTHON_UNUSED PyObject *_
       goto __pyx_L14;
     }
 
-    /* "fastseq/_seq.pyx":288
+    /* "cyseq/_seq.pyx":288
  *             # the dummy we started with), and make the second block the
  *             # new block to compare against.
  *             if k1:             # <<<<<<<<<<<<<<
@@ -4097,7 +4097,7 @@ static PyObject *__pyx_pf_7fastseq_4_seq_2match_blocks(CYTHON_UNUSED PyObject *_
       __pyx_t_3 = (__pyx_v_k1 != 0);
       if (__pyx_t_3) {
 
-        /* "fastseq/_seq.pyx":289
+        /* "cyseq/_seq.pyx":289
  *             # new block to compare against.
  *             if k1:
  *                 non_adjacent.append(Match(i1, j1, k1))             # <<<<<<<<<<<<<<
@@ -4139,7 +4139,7 @@ static PyObject *__pyx_pf_7fastseq_4_seq_2match_blocks(CYTHON_UNUSED PyObject *_
         __pyx_t_17 = __Pyx_PyList_Append(__pyx_v_non_adjacent, __pyx_t_9); if (unlikely(__pyx_t_17 == ((int)-1))) __PYX_ERR(0, 289, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
 
-        /* "fastseq/_seq.pyx":288
+        /* "cyseq/_seq.pyx":288
  *             # the dummy we started with), and make the second block the
  *             # new block to compare against.
  *             if k1:             # <<<<<<<<<<<<<<
@@ -4148,7 +4148,7 @@ static PyObject *__pyx_pf_7fastseq_4_seq_2match_blocks(CYTHON_UNUSED PyObject *_
 */
       }
 
-      /* "fastseq/_seq.pyx":290
+      /* "cyseq/_seq.pyx":290
  *             if k1:
  *                 non_adjacent.append(Match(i1, j1, k1))
  *             i1, j1, k1 = i2, j2, k2             # <<<<<<<<<<<<<<
@@ -4164,7 +4164,7 @@ static PyObject *__pyx_pf_7fastseq_4_seq_2match_blocks(CYTHON_UNUSED PyObject *_
     }
     __pyx_L14:;
 
-    /* "fastseq/_seq.pyx":276
+    /* "cyseq/_seq.pyx":276
  *     i1 = j1 = k1 = 0
  *     non_adjacent = []
  *     for match in matching_blocks:             # <<<<<<<<<<<<<<
@@ -4173,7 +4173,7 @@ static PyObject *__pyx_pf_7fastseq_4_seq_2match_blocks(CYTHON_UNUSED PyObject *_
 */
   }
 
-  /* "fastseq/_seq.pyx":291
+  /* "cyseq/_seq.pyx":291
  *                 non_adjacent.append(Match(i1, j1, k1))
  *             i1, j1, k1 = i2, j2, k2
  *     if k1:             # <<<<<<<<<<<<<<
@@ -4183,7 +4183,7 @@ static PyObject *__pyx_pf_7fastseq_4_seq_2match_blocks(CYTHON_UNUSED PyObject *_
   __pyx_t_3 = (__pyx_v_k1 != 0);
   if (__pyx_t_3) {
 
-    /* "fastseq/_seq.pyx":292
+    /* "cyseq/_seq.pyx":292
  *             i1, j1, k1 = i2, j2, k2
  *     if k1:
  *         non_adjacent.append(Match(i1, j1, k1))             # <<<<<<<<<<<<<<
@@ -4225,7 +4225,7 @@ static PyObject *__pyx_pf_7fastseq_4_seq_2match_blocks(CYTHON_UNUSED PyObject *_
     __pyx_t_17 = __Pyx_PyList_Append(__pyx_v_non_adjacent, __pyx_t_9); if (unlikely(__pyx_t_17 == ((int)-1))) __PYX_ERR(0, 292, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
 
-    /* "fastseq/_seq.pyx":291
+    /* "cyseq/_seq.pyx":291
  *                 non_adjacent.append(Match(i1, j1, k1))
  *             i1, j1, k1 = i2, j2, k2
  *     if k1:             # <<<<<<<<<<<<<<
@@ -4234,7 +4234,7 @@ static PyObject *__pyx_pf_7fastseq_4_seq_2match_blocks(CYTHON_UNUSED PyObject *_
 */
   }
 
-  /* "fastseq/_seq.pyx":294
+  /* "cyseq/_seq.pyx":294
  *         non_adjacent.append(Match(i1, j1, k1))
  * 
  *     return non_adjacent             # <<<<<<<<<<<<<<
@@ -4244,7 +4244,7 @@ static PyObject *__pyx_pf_7fastseq_4_seq_2match_blocks(CYTHON_UNUSED PyObject *_
   __pyx_r = __pyx_v_non_adjacent;
   goto __pyx_L0;
 
-  /* "fastseq/_seq.pyx":214
+  /* "cyseq/_seq.pyx":214
  * 
  * 
  * def match_blocks(             # <<<<<<<<<<<<<<
@@ -4260,7 +4260,7 @@ static PyObject *__pyx_pf_7fastseq_4_seq_2match_blocks(CYTHON_UNUSED PyObject *_
   __Pyx_XDECREF(__pyx_t_13);
   __Pyx_XDECREF(__pyx_t_14);
   __Pyx_XDECREF(__pyx_t_15);
-  __Pyx_AddTraceback("fastseq._seq.match_blocks", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("cyseq._seq.match_blocks", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XDECREF(__pyx_v_non_adjacent);
@@ -4610,13 +4610,13 @@ __Pyx_RefNannySetupContext("PyInit__seq", 0);
   if (__pyx_AsyncGen_init(__pyx_m) < 0) __PYX_ERR(0, 1, __pyx_L1_error)
   #endif
   /*--- Library function declarations ---*/
-  if (__pyx_module_is_main_fastseq___seq) {
+  if (__pyx_module_is_main_cyseq___seq) {
     if (PyObject_SetAttr(__pyx_m, __pyx_mstate_global->__pyx_n_u_name, __pyx_mstate_global->__pyx_n_u_main) < 0) __PYX_ERR(0, 1, __pyx_L1_error)
   }
   {
     PyObject *modules = PyImport_GetModuleDict(); if (unlikely(!modules)) __PYX_ERR(0, 1, __pyx_L1_error)
-    if (!PyDict_GetItemString(modules, "fastseq._seq")) {
-      if (unlikely((PyDict_SetItemString(modules, "fastseq._seq", __pyx_m) < 0))) __PYX_ERR(0, 1, __pyx_L1_error)
+    if (!PyDict_GetItemString(modules, "cyseq._seq")) {
+      if (unlikely((PyDict_SetItemString(modules, "cyseq._seq", __pyx_m) < 0))) __PYX_ERR(0, 1, __pyx_L1_error)
     }
   }
   /*--- Builtin init code ---*/
@@ -4634,7 +4634,7 @@ __Pyx_RefNannySetupContext("PyInit__seq", 0);
   (void)__Pyx_modinit_function_import_code(__pyx_mstate);
   /*--- Execution code ---*/
 
-  /* "fastseq/_seq.pyx":9
+  /* "cyseq/_seq.pyx":9
  * # See https://aboutcode.org for more information about nexB OSS projects.
  * #
  * from collections import namedtuple as _namedtuple             # <<<<<<<<<<<<<<
@@ -4652,7 +4652,7 @@ __Pyx_RefNannySetupContext("PyInit__seq", 0);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-  /* "fastseq/_seq.pyx":31
+  /* "cyseq/_seq.pyx":31
  * 
  * 
  * Match = _namedtuple('Match', 'a b size')             # <<<<<<<<<<<<<<
@@ -4667,34 +4667,34 @@ __Pyx_RefNannySetupContext("PyInit__seq", 0);
   if (PyDict_SetItem(__pyx_mstate_global->__pyx_d, __pyx_mstate_global->__pyx_n_u_Match, __pyx_t_2) < 0) __PYX_ERR(0, 31, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "fastseq/_seq.pyx":166
+  /* "cyseq/_seq.pyx":166
  * 
  * 
  * def find_longest_match(             # <<<<<<<<<<<<<<
  *     a,
  *     b,
 */
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_7fastseq_4_seq_1find_longest_match, 0, __pyx_mstate_global->__pyx_n_u_find_longest_match, NULL, __pyx_mstate_global->__pyx_n_u_fastseq__seq, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[0])); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 166, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_5cyseq_4_seq_1find_longest_match, 0, __pyx_mstate_global->__pyx_n_u_find_longest_match, NULL, __pyx_mstate_global->__pyx_n_u_cyseq__seq, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[0])); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 166, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   if (PyDict_SetItem(__pyx_mstate_global->__pyx_d, __pyx_mstate_global->__pyx_n_u_find_longest_match, __pyx_t_2) < 0) __PYX_ERR(0, 166, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "fastseq/_seq.pyx":214
+  /* "cyseq/_seq.pyx":214
  * 
  * 
  * def match_blocks(             # <<<<<<<<<<<<<<
  *     a,
  *     b,
 */
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_7fastseq_4_seq_3match_blocks, 0, __pyx_mstate_global->__pyx_n_u_match_blocks, NULL, __pyx_mstate_global->__pyx_n_u_fastseq__seq, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[1])); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 214, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_5cyseq_4_seq_3match_blocks, 0, __pyx_mstate_global->__pyx_n_u_match_blocks, NULL, __pyx_mstate_global->__pyx_n_u_cyseq__seq, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[1])); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 214, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   if (PyDict_SetItem(__pyx_mstate_global->__pyx_d, __pyx_mstate_global->__pyx_n_u_match_blocks, __pyx_t_2) < 0) __PYX_ERR(0, 214, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "fastseq/_seq.pyx":1
+  /* "cyseq/_seq.pyx":1
  * #             # <<<<<<<<<<<<<<
  * # Copyright (c) nexB Inc. and others. All rights reserved.
- * # fastseq is a trademark of nexB Inc.
+ * # cyseq is a trademark of nexB Inc.
 */
   __pyx_t_2 = __Pyx_PyDict_NewPresized(0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
@@ -4709,7 +4709,7 @@ __Pyx_RefNannySetupContext("PyInit__seq", 0);
   __Pyx_XDECREF(__pyx_t_3);
   if (__pyx_m) {
     if (__pyx_mstate->__pyx_d && stringtab_initialized) {
-      __Pyx_AddTraceback("init fastseq._seq", __pyx_clineno, __pyx_lineno, __pyx_filename);
+      __Pyx_AddTraceback("init cyseq._seq", __pyx_clineno, __pyx_lineno, __pyx_filename);
     }
     #if !CYTHON_USE_MODULE_STATE
     Py_CLEAR(__pyx_m);
@@ -4723,7 +4723,7 @@ __Pyx_RefNannySetupContext("PyInit__seq", 0);
     }
     #endif
   } else if (!PyErr_Occurred()) {
-    PyErr_SetString(PyExc_ImportError, "init fastseq._seq");
+    PyErr_SetString(PyExc_ImportError, "init cyseq._seq");
   }
   __pyx_L0:;
   __Pyx_RefNannyFinishContext();
@@ -4737,11 +4737,11 @@ __Pyx_RefNannySetupContext("PyInit__seq", 0);
 
 typedef struct {
     const char *s;
-#if 20 <= 65535
+#if 18 <= 65535
     const unsigned short n;
-#elif 20 / 2 < INT_MAX
+#elif 18 / 2 < INT_MAX
     const unsigned int n;
-#elif 20 / 2 < LONG_MAX
+#elif 18 / 2 < LONG_MAX
     const unsigned long n;
 #else
     const Py_ssize_t n;
@@ -4777,8 +4777,8 @@ static const __Pyx_StringTabEntry __pyx_string_tab[] = {
   {__pyx_k_blo, sizeof(__pyx_k_blo), 0, 1, 1}, /* PyObject cname: __pyx_n_u_blo */
   {__pyx_k_cline_in_traceback, sizeof(__pyx_k_cline_in_traceback), 0, 1, 1}, /* PyObject cname: __pyx_n_u_cline_in_traceback */
   {__pyx_k_collections, sizeof(__pyx_k_collections), 0, 1, 1}, /* PyObject cname: __pyx_n_u_collections */
+  {__pyx_k_cyseq__seq, sizeof(__pyx_k_cyseq__seq), 0, 1, 1}, /* PyObject cname: __pyx_n_u_cyseq__seq */
   {__pyx_k_elem, sizeof(__pyx_k_elem), 0, 1, 1}, /* PyObject cname: __pyx_n_u_elem */
-  {__pyx_k_fastseq__seq, sizeof(__pyx_k_fastseq__seq), 0, 1, 1}, /* PyObject cname: __pyx_n_u_fastseq__seq */
   {__pyx_k_find_longest_match, sizeof(__pyx_k_find_longest_match), 0, 1, 1}, /* PyObject cname: __pyx_n_u_find_longest_match */
   {__pyx_k_func, sizeof(__pyx_k_func), 0, 1, 1}, /* PyObject cname: __pyx_n_u_func */
   {__pyx_k_get, sizeof(__pyx_k_get), 0, 1, 1}, /* PyObject cname: __pyx_n_u_get */
@@ -4810,7 +4810,7 @@ static const __Pyx_StringTabEntry __pyx_string_tab[] = {
   {__pyx_k_range, sizeof(__pyx_k_range), 0, 1, 1}, /* PyObject cname: __pyx_n_u_range */
   {__pyx_k_set_name, sizeof(__pyx_k_set_name), 0, 1, 1}, /* PyObject cname: __pyx_n_u_set_name */
   {__pyx_k_size, sizeof(__pyx_k_size), 0, 1, 1}, /* PyObject cname: __pyx_n_u_size */
-  {__pyx_k_src_fastseq__seq_pyx, sizeof(__pyx_k_src_fastseq__seq_pyx), 0, 1, 0}, /* PyObject cname: __pyx_kp_u_src_fastseq__seq_pyx */
+  {__pyx_k_src_cyseq__seq_pyx, sizeof(__pyx_k_src_cyseq__seq_pyx), 0, 1, 0}, /* PyObject cname: __pyx_kp_u_src_cyseq__seq_pyx */
   {__pyx_k_test, sizeof(__pyx_k_test), 0, 1, 1}, /* PyObject cname: __pyx_n_u_test */
   {__pyx_k_x, sizeof(__pyx_k_x), 0, 1, 1}, /* PyObject cname: __pyx_n_u_x */
   {0, 0, 0, 0, 0}
@@ -4834,7 +4834,7 @@ static int __Pyx_InitCachedConstants(__pyx_mstatetype *__pyx_mstate) {
   CYTHON_UNUSED_VAR(__pyx_mstate);
   __Pyx_RefNannySetupContext("__Pyx_InitCachedConstants", 0);
 
-  /* "fastseq/_seq.pyx":31
+  /* "cyseq/_seq.pyx":31
  * 
  * 
  * Match = _namedtuple('Match', 'a b size')             # <<<<<<<<<<<<<<
@@ -4889,12 +4889,12 @@ static int __Pyx_CreateCodeObjects(__pyx_mstatetype *__pyx_mstate) {
   {
     const __Pyx_PyCode_New_function_description descr = {9, 0, 0, 10, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 166, 50};
     PyObject* const varnames[] = {__pyx_mstate->__pyx_n_u_a, __pyx_mstate->__pyx_n_u_b, __pyx_mstate->__pyx_n_u_alo, __pyx_mstate->__pyx_n_u_ahi, __pyx_mstate->__pyx_n_u_blo, __pyx_mstate->__pyx_n_u_bhi, __pyx_mstate->__pyx_n_u_b2j, __pyx_mstate->__pyx_n_u_len_good, __pyx_mstate->__pyx_n_u_matchables, __pyx_mstate->__pyx_n_u_x};
-    __pyx_mstate_global->__pyx_codeobj_tab[0] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_src_fastseq__seq_pyx, __pyx_mstate->__pyx_n_u_find_longest_match, __pyx_k_X_1Cs_uE_e_Q_5_at1A, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[0])) goto bad;
+    __pyx_mstate_global->__pyx_codeobj_tab[0] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_src_cyseq__seq_pyx, __pyx_mstate->__pyx_n_u_find_longest_match, __pyx_k_X_1Cs_uE_e_Q_5_at1A, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[0])) goto bad;
   }
   {
     const __Pyx_PyCode_New_function_description descr = {7, 0, 0, 28, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS|CO_VARARGS|CO_VARKEYWORDS), 214, 385};
     PyObject* const varnames[] = {__pyx_mstate->__pyx_n_u_a, __pyx_mstate->__pyx_n_u_b, __pyx_mstate->__pyx_n_u_a_start, __pyx_mstate->__pyx_n_u_a_end, __pyx_mstate->__pyx_n_u_b2j, __pyx_mstate->__pyx_n_u_len_good, __pyx_mstate->__pyx_n_u_matchables, __pyx_mstate->__pyx_n_u_args, __pyx_mstate->__pyx_n_u_kwargs, __pyx_mstate->__pyx_n_u_i, __pyx_mstate->__pyx_n_u_j, __pyx_mstate->__pyx_n_u_k, __pyx_mstate->__pyx_n_u_i1, __pyx_mstate->__pyx_n_u_j1, __pyx_mstate->__pyx_n_u_k1, __pyx_mstate->__pyx_n_u_i2, __pyx_mstate->__pyx_n_u_j2, __pyx_mstate->__pyx_n_u_k2, __pyx_mstate->__pyx_n_u_alo, __pyx_mstate->__pyx_n_u_ahi, __pyx_mstate->__pyx_n_u_blo, __pyx_mstate->__pyx_n_u_bhi, __pyx_mstate->__pyx_n_u_queue, __pyx_mstate->__pyx_n_u_matching_blocks, __pyx_mstate->__pyx_n_u_elem, __pyx_mstate->__pyx_n_u_x, __pyx_mstate->__pyx_n_u_non_adjacent, __pyx_mstate->__pyx_n_u_match};
-    __pyx_mstate_global->__pyx_codeobj_tab[1] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_src_fastseq__seq_pyx, __pyx_mstate->__pyx_n_u_match_blocks, __pyx_k_L_9G3c_e6_uE_U_vT_t6_V4q_Ya_q_3, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[1])) goto bad;
+    __pyx_mstate_global->__pyx_codeobj_tab[1] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_src_cyseq__seq_pyx, __pyx_mstate->__pyx_n_u_match_blocks, __pyx_k_L_9G3c_e6_uE_U_vT_t6_V4q_Ya_q_3, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[1])) goto bad;
   }
   Py_DECREF(tuple_dedup_map);
   return 0;

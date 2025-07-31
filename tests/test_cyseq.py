@@ -1,15 +1,15 @@
 #
 # Copyright (c) nexB Inc. and others. All rights reserved.
-# fastseq is a trademark of nexB Inc.
+# cyseq is a trademark of nexB Inc.
 # SPDX-License-Identifier: Apache-2.0
 # See http://www.apache.org/licenses/LICENSE-2.0 for the license text.
-# See https://github.com/aboutcode-org/fastseq for support or download.
+# See https://github.com/aboutcode-org/cyseq for support or download.
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
 
 from unittest.case import TestCase
 
-import fastseq
+import cyseq
 
 """
 This is testing the sequence matching internals using sequences of integers. The
@@ -719,7 +719,7 @@ class TestSeq(TestCase):
         b_start = 0
         b_end = 53
 
-        tests = fastseq.find_longest_match(
+        tests = cyseq.find_longest_match(
             a=a,
             b=b,
             alo=a_start,
@@ -730,4 +730,4 @@ class TestSeq(TestCase):
             len_good=len_good,
             matchables=matchables,
         )
-        assert tests == fastseq.Match(a=357, b=0, size=8)
+        assert tests == cyseq.Match(a=357, b=0, size=8)
