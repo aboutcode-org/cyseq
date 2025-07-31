@@ -133,6 +133,7 @@ if not exist "%CFG_BIN_DIR%\python.exe" (
             --no-vcs-ignore ^
             %CFG_QUIET% ^
             "%CFG_ROOT_DIR%\%VIRTUALENV_DIR%"
+        "%CFG_BIN_DIR%\pip" install cython
     )
 )
 
