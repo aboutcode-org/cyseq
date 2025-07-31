@@ -1,5 +1,6 @@
 # Python compiled files
 *.py[cod]
+src/**/*.so
 
 # virtualenv and other misc bits
 /src/*.egg-info
