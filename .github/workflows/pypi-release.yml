@@ -21,7 +21,7 @@ on:
 jobs:
   build-pypi-distribs:
     name: Build and publish library to PyPI
-    runs-on: ubuntu-24.04
+    runs-on: [ubuntu-latest, windows-latest, macos-latest, macos-13]
 
     strategy:
       matrix:
@@ -30,7 +30,7 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-      
+
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
