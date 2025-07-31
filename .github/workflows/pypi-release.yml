@@ -48,7 +48,7 @@ jobs:
       - name: Upload sdist
         uses: actions/upload-artifact@v4
         with:
-          name: pypi_archives
+          name: pypi_archives_sdist
           path: dist/*
 
 
@@ -81,7 +81,7 @@ jobs:
       - name: Upload built archives
         uses: actions/upload-artifact@v4
         with:
-          name: pypi_archives
+          name: pypi_archives_wheel-${{ matrix.python-version }}
           path: dist/*
 
 
@@ -93,10 +93,46 @@ jobs:
     runs-on: ubuntu-24.04
 
     steps:
-      - name: Download built archives
+      - name: Download built sdist
         uses: actions/download-artifact@v4
         with:
-          name: pypi_archives
+          name: pypi_archives_sdist
+          path: dist
+
+      - name: Download built wheel for Python 3.9
+        uses: actions/download-artifact@v4
+        with:
+          name: pypi_archives_wheel-3.9
+          path: dist
+
+      - name: Download built wheel for Python 3.9
+        uses: actions/download-artifact@v4
+        with:
+          name: pypi_archives_wheel-3.9
+          path: dist
+
+      - name: Download built wheel for Python 3.10
+        uses: actions/download-artifact@v4
+        with:
+          name: pypi_archives_wheel-3.10
+          path: dist
+
+      - name: Download built wheel for Python 3.11
+        uses: actions/download-artifact@v4
+        with:
+          name: pypi_archives_wheel-3.11
+          path: dist
+
+      - name: Download built wheel for Python 3.12
+        uses: actions/download-artifact@v4
+        with:
+          name: pypi_archives_wheel-3.12
+          path: dist
+
+      - name: Download built wheel for Python 3.13
+        uses: actions/download-artifact@v4
+        with:
+          name: pypi_archives_wheel-3.13
           path: dist
 
       - name: Create GH release
@@ -113,10 +149,46 @@ jobs:
     runs-on: ubuntu-24.04
 
     steps:
-      - name: Download built archives
+      - name: Download built sdist
         uses: actions/download-artifact@v4
         with:
-          name: pypi_archives
+          name: pypi_archives_sdist
+          path: dist
+
+      - name: Download built wheel for Python 3.9
+        uses: actions/download-artifact@v4
+        with:
+          name: pypi_archives_wheel-3.9
+          path: dist
+
+      - name: Download built wheel for Python 3.9
+        uses: actions/download-artifact@v4
+        with:
+          name: pypi_archives_wheel-3.9
+          path: dist
+
+      - name: Download built wheel for Python 3.10
+        uses: actions/download-artifact@v4
+        with:
+          name: pypi_archives_wheel-3.10
+          path: dist
+
+      - name: Download built wheel for Python 3.11
+        uses: actions/download-artifact@v4
+        with:
+          name: pypi_archives_wheel-3.11
+          path: dist
+
+      - name: Download built wheel for Python 3.12
+        uses: actions/download-artifact@v4
+        with:
+          name: pypi_archives_wheel-3.12
+          path: dist
+
+      - name: Download built wheel for Python 3.13
+        uses: actions/download-artifact@v4
+        with:
+          name: pypi_archives_wheel-3.13
           path: dist
 
       - name: Publish to PyPI
