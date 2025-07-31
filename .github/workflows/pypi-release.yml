@@ -20,7 +20,7 @@ on:
 
 jobs:
   build-pypi-distribs-sdist:
-    name: Build sdist
+    name: Build and upload sdist
     runs-on: ubuntu-24.04
 
     strategy:
@@ -45,11 +45,15 @@ jobs:
       - name: Validate sdist for Pypi
         run: python -m twine check dist/*
 
+      - name: Upload sdist
+        uses: actions/upload-artifact@v4
+        with:
+          name: pypi_archives
+          path: dist/*
+
 
   build-pypi-distribs-wheel:
-    name: Build wheels
-    needs:
-      - build-pypi-distribs-sdist
+    name: Build and upload wheels
     runs-on: ubuntu-24.04
 
     strategy:
@@ -74,15 +78,6 @@ jobs:
       - name: Validate wheel for Pypi
         run: python -m twine check dist/*
 
-
-  upload-pypi-distribs:
-    name: Upload built sdist and wheels
-    needs:
-      - build-pypi-distribs-sdist
-      - build-pypi-distribs-wheel
-    runs-on: ubuntu-24.04
-
-    steps:
       - name: Upload built archives
         uses: actions/upload-artifact@v4
         with:
@@ -93,7 +88,8 @@ jobs:
   create-gh-release:
     name: Create GH release
     needs:
-      - upload-pypi-distribs
+      - build-pypi-distribs-sdist
+      - build-pypi-distribs-wheel
     runs-on: ubuntu-24.04
 
     steps:
