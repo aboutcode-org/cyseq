@@ -19,13 +19,13 @@ on:
       - "v*.*.*"
 
 jobs:
-  build-pypi-distribs-sdist:
-    name: Build and upload sdist
+  build-pypi-distribs:
+    name: Build and upload wheels and sdist
     runs-on: ubuntu-24.04
 
     strategy:
       matrix:
-       pyver: ["3.13"]
+       os: [ubuntu-latest, windows-latest, macos-13, macos-latest]
 
     steps:
       - name: Checkout code
@@ -33,106 +33,55 @@ jobs:
 
       - name: Set up Python
         uses: actions/setup-python@v5
-        with:
-          python-version: ${{ matrix.python-version }}
 
-      - name: Install pypa/build and twine
-        run: python -m pip install --user --upgrade build twine pkginfo packaging
+      - name: Install cibuildwheel
+        run: python -m pip install cibuildwheel twine
 
-      - name: Build sdist
-        run: python -m build --sdist --outdir dist/
+      - name: Build wheels
+        env:
+          CIBW_BUILD: "cp39-* cp310-* cp311-* cp312-* cp313-*"
+          CIBW_SKIP: "*_aarch64 *_ppc64le *_s390x *_armv7l *_riscv64 *_aarch64 *_ppc64le *_s390x *_armv7l *_riscv64"
+        run: python -m cibuildwheel --output-dir dist/
 
-      - name: Validate sdist for Pypi
+      - name: Validate wheels for Pypi
         run: python -m twine check dist/*
 
-      - name: Upload sdist
+      - name: Upload wheels
         uses: actions/upload-artifact@v4
         with:
-          name: pypi_archives_sdist
-          path: dist/*
-
-
-  build-pypi-distribs-wheel:
-    name: Build and upload wheels
-    runs-on: ubuntu-24.04
-
-    strategy:
-      matrix:
-        python-version: ["3.9", "3.10", "3.11", "3.12", "3.13"]
-
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: ${{ matrix.python-version }}
-
-      - name: Install pypa/build and twine
-        run: python -m pip install --user --upgrade build twine pkginfo packaging
-
-      - name: Build a binary wheel
-        run: python -m build --wheel --outdir dist/
-
-      - name: Validate wheel for Pypi
-        run: python -m twine check dist/*
-
-      - name: Upload built archives
-        uses: actions/upload-artifact@v4
-        with:
-          name: pypi_archives_wheel-${{ matrix.python-version }}
+          name: pypi_archives-${{ matrix.os }}
           path: dist/*
 
 
   create-gh-release:
     name: Create GH release
     needs:
-      - build-pypi-distribs-sdist
-      - build-pypi-distribs-wheel
+      - build-pypi-distribs
     runs-on: ubuntu-24.04
 
     steps:
-      - name: Download built sdist
+      - name: Download ubuntu-latest builds
         uses: actions/download-artifact@v4
         with:
-          name: pypi_archives_sdist
+          name: pypi_archive-ubuntu-latest
           path: dist
 
-      - name: Download built wheel for Python 3.9
+      - name: Download windows-latest builds
         uses: actions/download-artifact@v4
         with:
-          name: pypi_archives_wheel-3.9
+          name: pypi_archive-windows-latest
           path: dist
 
-      - name: Download built wheel for Python 3.9
+      - name: Download macos-13 builds
         uses: actions/download-artifact@v4
         with:
-          name: pypi_archives_wheel-3.9
+          name: pypi_archive-macos-13
           path: dist
 
-      - name: Download built wheel for Python 3.10
+      - name: Download macos-latest builds
         uses: actions/download-artifact@v4
         with:
-          name: pypi_archives_wheel-3.10
-          path: dist
-
-      - name: Download built wheel for Python 3.11
-        uses: actions/download-artifact@v4
-        with:
-          name: pypi_archives_wheel-3.11
-          path: dist
-
-      - name: Download built wheel for Python 3.12
-        uses: actions/download-artifact@v4
-        with:
-          name: pypi_archives_wheel-3.12
-          path: dist
-
-      - name: Download built wheel for Python 3.13
-        uses: actions/download-artifact@v4
-        with:
-          name: pypi_archives_wheel-3.13
+          name: pypi_archive-macos-latest
           path: dist
 
       - name: Create GH release
@@ -149,46 +98,28 @@ jobs:
     runs-on: ubuntu-24.04
 
     steps:
-      - name: Download built sdist
+      - name: Download ubuntu-latest builds
         uses: actions/download-artifact@v4
         with:
-          name: pypi_archives_sdist
+          name: pypi_archive-ubuntu-latest
           path: dist
 
-      - name: Download built wheel for Python 3.9
+      - name: Download windows-latest builds
         uses: actions/download-artifact@v4
         with:
-          name: pypi_archives_wheel-3.9
+          name: pypi_archive-windows-latest
           path: dist
 
-      - name: Download built wheel for Python 3.9
+      - name: Download macos-13 builds
         uses: actions/download-artifact@v4
         with:
-          name: pypi_archives_wheel-3.9
+          name: pypi_archive-macos-13
           path: dist
 
-      - name: Download built wheel for Python 3.10
+      - name: Download macos-latest builds
         uses: actions/download-artifact@v4
         with:
-          name: pypi_archives_wheel-3.10
-          path: dist
-
-      - name: Download built wheel for Python 3.11
-        uses: actions/download-artifact@v4
-        with:
-          name: pypi_archives_wheel-3.11
-          path: dist
-
-      - name: Download built wheel for Python 3.12
-        uses: actions/download-artifact@v4
-        with:
-          name: pypi_archives_wheel-3.12
-          path: dist
-
-      - name: Download built wheel for Python 3.13
-        uses: actions/download-artifact@v4
-        with:
-          name: pypi_archives_wheel-3.13
+          name: pypi_archive-macos-latest
           path: dist
 
       - name: Publish to PyPI
