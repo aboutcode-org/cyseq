@@ -34,8 +34,8 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v5
 
-      - name: Install cibuildwheel, twine, and packaging
-        run: python -m pip install cibuildwheel twine packaging
+      - name: Install cibuildwheel, twine, pkginfo, and packaging
+        run: python -m pip install cibuildwheel twine pkginfo packaging
 
       - name: Build wheels
         env:
