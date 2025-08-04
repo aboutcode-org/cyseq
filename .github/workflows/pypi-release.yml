@@ -61,13 +61,13 @@ jobs:
         uses: actions/setup-python@v5
 
       - name: Install cibuildwheel, twine, pkginfo, and packaging
-        run: python3 -m pip install --user --upgrade cibuildwheel twine pkginfo packaging
+        run: python -m pip install --upgrade cibuildwheel twine pkginfo packaging
 
       - name: Build wheels
-        run: python3 -m cibuildwheel --output-dir dist/
+        run: python -m cibuildwheel --output-dir dist/
 
       - name: Validate wheels for Pypi
-        run: python3 -m twine check dist/*
+        run: python -m twine check dist/*
 
       - name: Upload wheels
         uses: actions/upload-artifact@v4
