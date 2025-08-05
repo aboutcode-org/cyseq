@@ -96,7 +96,7 @@ jobs:
 
           - name: Checkout and install reqs
             run: |
-                pip install --upgrade --user build twine packaging pip setuptools
+                pip install --upgrade --user build twine pkginfo packaging pip setuptools
 
           - name: Build sdist
             run: |
@@ -131,5 +131,5 @@ jobs:
 
             - name: Build, install and test
               run: >
-                  pip install .[testing] &&
-                  pytest -vvs
+                  make dev &&
+                  make test
