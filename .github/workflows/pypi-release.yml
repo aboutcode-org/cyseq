@@ -139,7 +139,7 @@ jobs:
         uses: softprops/action-gh-release@v2
         with:
           draft: true
-          files: cyseq-build/*
+          files: cyseq/*/*
 
   create-pypi-release:
     name: Create PyPI release
