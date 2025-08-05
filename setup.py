@@ -5,7 +5,7 @@ from Cython.Build import cythonize
 
 
 extensions = [
-    setuptools.Extension("cyseq._seq", ["src/cyseq/_seq.pyx"], language="c++"),
+    setuptools.Extension("cyseq._seq", ["src/cyseq/_seq.pyx"], language="c++", extra_compile_args=["-std=c++11"]),
 ]
 
 if __name__ == "__main__":
