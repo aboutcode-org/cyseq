@@ -19,107 +19,127 @@ on:
       - "v*.*.*"
 
 jobs:
-  build-pypi-distribs-sdist:
-    name: Build and upload sdist
+  build-wheels:
+      name: Build unicode wheels ${{ matrix.type }} ${{ matrix.arch }} on ${{ matrix.os }}
+      runs-on: ${{ matrix.os }}
+      defaults:
+        run:
+          shell: bash
+      strategy:
+          fail-fast: false
+          matrix:
+              os: [macos-latest, windows-latest]
+              arch: [auto64]
+              build: ["cp{39,310,311,312,313}-*"]
+
+              include:
+                  - os: ubuntu-latest
+                    arch: auto64
+                    type: manylinux1
+                    build: "cp39-*"
+                    CIBW_MANYLINUX_X86_64_IMAGE: manylinux1
+
+                  - os: ubuntu-latest
+                    arch: auto64
+                    type: manylinux2010
+                    build: "cp310-*"
+                    CIBW_MANYLINUX_X86_64_IMAGE: manylinux2010
+
+                  - os: ubuntu-latest
+                    arch: auto64
+                    type: manylinux2014
+                    build: "cp{311,312,313}-*"
+                    CIBW_MANYLINUX_X86_64_IMAGE: manylinux2014
+
+                  - os: macos-latest
+                    arch: universal2
+                    build: "cp{39,310,311,312,313}-*"
+
+                  - os: windows-latest
+                    arch: auto64
+                    build: "cp{39,310,311,312,313}-*"
+
+      steps:
+          - uses: actions/checkout@v4
+
+          - name: Build wheels and run tests
+            uses: pypa/cibuildwheel@v2.23.3
+            env:
+                CIBW_BUILD: ${{ matrix.build }}
+                CIBW_MANYLINUX_I686_IMAGE: ${{ matrix.CIBW_MANYLINUX_I686_IMAGE }}
+                CIBW_MANYLINUX_X86_64_IMAGE: ${{ matrix.CIBW_MANYLINUX_X86_64_IMAGE }}
+                CIBW_ARCHS: ${{ matrix.arch }}
+                CIBW_TEST_REQUIRES: pytest
+                CIBW_TEST_COMMAND: pytest -vvs {project}/tests
+                # Skip PyPy wheels
+                CIBW_SKIP: "pp*"
+
+          - name: Collect built wheels
+            uses: actions/upload-artifact@v4
+            with:
+                name: cyseq-wheels-${{ matrix.os }}-${{ strategy.job-index }}
+                path: ./wheelhouse/*.whl
+
+  build-sdist:
+    name: Build source distribution
     runs-on: ubuntu-24.04
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
+        - uses: actions/checkout@v4
 
-      - name: Set up Python
-        uses: actions/setup-python@v5
+        - name: Checkout and install reqs
+          run: |
+              pip install --upgrade --user build twine pkginfo packaging pip setuptools cython
 
-      - name: Install build, twine, pkginfo, and packaging
-        run: python -m pip install --user --upgrade build twine pkginfo packaging
+        - name: Build sdist
+          run: |
+              python setup.py sdist
+              twine check dist/*
 
-      - name: Build sdist
-        run: python -m build --sdist --outdir dist/
+        - name: Collect built sdist
+          uses: actions/upload-artifact@v4
+          with:
+              name: cyseq-sdist
+              path: dist/*.tar.gz
 
-      - name: Validate sdist for Pypi
-        run: python -m twine check dist/*
-
-      - name: Upload sdist
-        uses: actions/upload-artifact@v4
-        with:
-          name: pypi_archives-sdist
-          path: dist/*
-
-  build-pypi-distribs-wheels:
-    name: Build and upload wheels on ${{ matrix.os }}
-    runs-on: ${{ matrix.os }}
-
-    strategy:
-      matrix:
-       os: [ubuntu-latest, windows-latest, macos-13, macos-latest]
-
+  merge:
+    runs-on: ubuntu-latest
+    needs: [build-sdist, build-wheels]
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Set up Python
-        uses: actions/setup-python@v5
-
-      - name: Install cibuildwheel, twine, pkginfo, and packaging
-        run: python -m pip install --user --upgrade cibuildwheel twine pkginfo packaging
-
-      - name: Build wheels
-        run: python -m cibuildwheel --output-dir dist/
-
-      - name: Validate wheels for Pypi
-        run: python -m twine check dist/*
-
-      - name: Upload wheels
-        uses: actions/upload-artifact@v4
+      - name: Merge created wheels and sdist in a single zip
+        uses: actions/upload-artifact/merge@v4
         with:
-          name: pypi_archives-${{ matrix.os }}
-          path: dist/*
+          name: cyseq-build
+          pattern: cyseq-*
 
+  check-dist:
+    name: Check distributions are PyPi-correct
+    needs: merge
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          path: cyseq-build
+      - run: find . -ls
+      - run: pipx run twine check --strict cyseq-build/*/*
 
   create-gh-release:
     name: Create GH release
     needs:
-      - build-pypi-distribs-sdist
-      - build-pypi-distribs-wheels
+      - check-dist
     runs-on: ubuntu-24.04
 
     steps:
-      - name: Download sdist
+      - name: Download builds
         uses: actions/download-artifact@v4
         with:
-          name: pypi_archives-sdist
-          path: dist
-
-      - name: Download ubuntu-latest builds
-        uses: actions/download-artifact@v4
-        with:
-          name: pypi_archives-ubuntu-latest
-          path: dist
-
-      - name: Download windows-latest builds
-        uses: actions/download-artifact@v4
-        with:
-          name: pypi_archives-windows-latest
-          path: dist
-
-      - name: Download macos-13 builds
-        uses: actions/download-artifact@v4
-        with:
-          name: pypi_archives-macos-13
-          path: dist
-
-      - name: Download macos-latest builds
-        uses: actions/download-artifact@v4
-        with:
-          name: pypi_archives-macos-latest
-          path: dist
+          path: cyseq-build
 
       - name: Create GH release
         uses: softprops/action-gh-release@v2
         with:
           draft: true
           files: dist/*
-
 
   create-pypi-release:
     name: Create PyPI release
@@ -128,29 +148,10 @@ jobs:
     runs-on: ubuntu-24.04
 
     steps:
-      - name: Download ubuntu-latest builds
+      - name: Download builds
         uses: actions/download-artifact@v4
         with:
-          name: pypi_archives-ubuntu-latest
-          path: dist
-
-      - name: Download windows-latest builds
-        uses: actions/download-artifact@v4
-        with:
-          name: pypi_archives-windows-latest
-          path: dist
-
-      - name: Download macos-13 builds
-        uses: actions/download-artifact@v4
-        with:
-          name: pypi_archives-macos-13
-          path: dist
-
-      - name: Download macos-latest builds
-        uses: actions/download-artifact@v4
-        with:
-          name: pypi_archives-macos-latest
-          path: dist
+          path: cyseq-build
 
       - name: Publish to PyPI
         if: startsWith(github.ref, 'refs/tags')
