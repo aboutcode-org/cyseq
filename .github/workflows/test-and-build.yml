@@ -108,7 +108,7 @@ jobs:
             with:
                 path: dist/*.tar.gz
 
-    test_on_many_oses:
+    test_on_posix_oses:
         name: Run tests ${{ matrix.python }} on ${{ matrix.os }}
         runs-on: ${{ matrix.os }}
         defaults:
@@ -118,7 +118,7 @@ jobs:
         strategy:
             fail-fast: false
             matrix:
-                os: [ubuntu-22.04, ubuntu-24.04, macos-13, macos-14, windows-2022, windows-2025]
+                os: [ubuntu-22.04, ubuntu-24.04, macos-13, macos-14]
                 python: ["3.9", "3.10", "3.11", "3.12", "3.13"]
 
         steps:
@@ -133,3 +133,27 @@ jobs:
               run: >
                   make dev &&
                   make test
+
+    test_on_nt_oses:
+        name: Run tests ${{ matrix.python }} on ${{ matrix.os }}
+        runs-on: ${{ matrix.os }}
+
+        strategy:
+            fail-fast: false
+            matrix:
+                os: [windows-latest]
+                python: ["3.9", "3.10", "3.11", "3.12", "3.13"]
+
+        steps:
+            - name: Set up Python
+              uses: actions/setup-python@v5
+              with:
+                python-version: "${{ matrix.python }}"
+
+            - uses: actions/checkout@v4
+
+            - name: Build, install and test
+              run: >
+                  .\configure.bat --dev &&
+                  .\venv\Scripts\activate &&
+                  py.test -vvs .
