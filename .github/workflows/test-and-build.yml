@@ -96,7 +96,7 @@ jobs:
 
           - name: Checkout and install reqs
             run: |
-                pip install --upgrade --user build twine pkginfo packaging pip setuptools
+                pip install --upgrade --user build twine pkginfo packaging pip setuptools cython
 
           - name: Build sdist
             run: |
