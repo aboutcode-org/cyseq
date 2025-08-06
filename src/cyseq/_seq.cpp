@@ -1160,7 +1160,7 @@ static CYTHON_INLINE float __PYX_NAN() {
     }
 
     #endif
-    
+
 #include <algorithm>
 #include <unordered_map>
 #include <vector>
@@ -1544,8 +1544,8 @@ struct __pyx_t_5cyseq_4_seq_CMatch;
 typedef struct __pyx_t_5cyseq_4_seq_CMatch __pyx_t_5cyseq_4_seq_CMatch;
 
 /* "cyseq/_seq.pyx":34
- * 
- * 
+ *
+ *
  * ctypedef struct MatchingBlockQueueElem:             # <<<<<<<<<<<<<<
  *     Py_ssize_t alo
  *     Py_ssize_t ahi
@@ -1558,8 +1558,8 @@ struct __pyx_t_5cyseq_4_seq_MatchingBlockQueueElem {
 };
 
 /* "cyseq/_seq.pyx":41
- * 
- * 
+ *
+ *
  * ctypedef struct CMatch:             # <<<<<<<<<<<<<<
  *     Py_ssize_t a
  *     Py_ssize_t b
@@ -2593,8 +2593,8 @@ static CYTHON_SMALL_CODE int __pyx_m_traverse(PyObject *m, visitproc visit, void
 /* #### Code section: module_code ### */
 
 /* "cyseq/_seq.pyx":47
- * 
- * 
+ *
+ *
  * cdef int CMatch_sorter(const CMatch& lhs, const CMatch& rhs):             # <<<<<<<<<<<<<<
  *     if lhs.a != rhs.a:
  *         return lhs.a < rhs.a
@@ -2605,7 +2605,7 @@ static int __pyx_f_5cyseq_4_seq_CMatch_sorter(__pyx_t_5cyseq_4_seq_CMatch const 
   int __pyx_t_1;
 
   /* "cyseq/_seq.pyx":48
- * 
+ *
  * cdef int CMatch_sorter(const CMatch& lhs, const CMatch& rhs):
  *     if lhs.a != rhs.a:             # <<<<<<<<<<<<<<
  *         return lhs.a < rhs.a
@@ -2625,7 +2625,7 @@ static int __pyx_f_5cyseq_4_seq_CMatch_sorter(__pyx_t_5cyseq_4_seq_CMatch const 
     goto __pyx_L0;
 
     /* "cyseq/_seq.pyx":48
- * 
+ *
  * cdef int CMatch_sorter(const CMatch& lhs, const CMatch& rhs):
  *     if lhs.a != rhs.a:             # <<<<<<<<<<<<<<
  *         return lhs.a < rhs.a
@@ -2648,7 +2648,7 @@ static int __pyx_f_5cyseq_4_seq_CMatch_sorter(__pyx_t_5cyseq_4_seq_CMatch const 
  *     if lhs.b != rhs.b:
  *         return lhs.b < rhs.b             # <<<<<<<<<<<<<<
  *     return lhs.size < rhs.size
- * 
+ *
 */
     __pyx_r = (__pyx_v_lhs.b < __pyx_v_rhs.b);
     goto __pyx_L0;
@@ -2666,15 +2666,15 @@ static int __pyx_f_5cyseq_4_seq_CMatch_sorter(__pyx_t_5cyseq_4_seq_CMatch const 
  *     if lhs.b != rhs.b:
  *         return lhs.b < rhs.b
  *     return lhs.size < rhs.size             # <<<<<<<<<<<<<<
- * 
- * 
+ *
+ *
 */
   __pyx_r = (__pyx_v_lhs.size < __pyx_v_rhs.size);
   goto __pyx_L0;
 
   /* "cyseq/_seq.pyx":47
- * 
- * 
+ *
+ *
  * cdef int CMatch_sorter(const CMatch& lhs, const CMatch& rhs):             # <<<<<<<<<<<<<<
  *     if lhs.a != rhs.a:
  *         return lhs.a < rhs.a
@@ -2686,8 +2686,8 @@ static int __pyx_f_5cyseq_4_seq_CMatch_sorter(__pyx_t_5cyseq_4_seq_CMatch const 
 }
 
 /* "cyseq/_seq.pyx":55
- * 
- * 
+ *
+ *
  * cdef CMatch _find_longest_match(             # <<<<<<<<<<<<<<
  *     a,
  *     b,
@@ -2725,7 +2725,7 @@ static __pyx_t_5cyseq_4_seq_CMatch __pyx_f_5cyseq_4_seq__find_longest_match(PyOb
 
   /* "cyseq/_seq.pyx":104
  *     cdef unordered_map[Py_ssize_t, Py_ssize_t] newj2len
- * 
+ *
  *     besti, bestj, bestsize = alo, blo, 0             # <<<<<<<<<<<<<<
  *     # find longest junk-free match
  *     # during an iteration of the loop, j2len[j] = length of longest
@@ -3013,7 +3013,7 @@ static __pyx_t_5cyseq_4_seq_CMatch __pyx_f_5cyseq_4_seq__find_longest_match(PyOb
  *                     bestsize = k
  *         j2len.swap(newj2len)             # <<<<<<<<<<<<<<
  *         newj2len.clear()
- * 
+ *
 */
     __pyx_v_j2len.swap(__pyx_v_newj2len);
 
@@ -3021,7 +3021,7 @@ static __pyx_t_5cyseq_4_seq_CMatch __pyx_f_5cyseq_4_seq__find_longest_match(PyOb
  *                     bestsize = k
  *         j2len.swap(newj2len)
  *         newj2len.clear()             # <<<<<<<<<<<<<<
- * 
+ *
  *     return extend_match(besti, bestj, bestsize, a, b, alo, ahi, blo, bhi, matchables)
 */
     __pyx_v_newj2len.clear();
@@ -3029,18 +3029,18 @@ static __pyx_t_5cyseq_4_seq_CMatch __pyx_f_5cyseq_4_seq__find_longest_match(PyOb
 
   /* "cyseq/_seq.pyx":129
  *         newj2len.clear()
- * 
+ *
  *     return extend_match(besti, bestj, bestsize, a, b, alo, ahi, blo, bhi, matchables)             # <<<<<<<<<<<<<<
- * 
- * 
+ *
+ *
 */
   __pyx_t_12 = __pyx_f_5cyseq_4_seq_extend_match(__pyx_v_besti, __pyx_v_bestj, __pyx_v_bestsize, __pyx_v_a, __pyx_v_b, __pyx_v_alo, __pyx_v_ahi, __pyx_v_blo, __pyx_v_bhi, __pyx_v_matchables); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 129, __pyx_L1_error)
   __pyx_r = __pyx_t_12;
   goto __pyx_L0;
 
   /* "cyseq/_seq.pyx":55
- * 
- * 
+ *
+ *
  * cdef CMatch _find_longest_match(             # <<<<<<<<<<<<<<
  *     a,
  *     b,
@@ -3060,8 +3060,8 @@ static __pyx_t_5cyseq_4_seq_CMatch __pyx_f_5cyseq_4_seq__find_longest_match(PyOb
 }
 
 /* "cyseq/_seq.pyx":132
- * 
- * 
+ *
+ *
  * cdef CMatch extend_match(             # <<<<<<<<<<<<<<
  *     Py_ssize_t besti,
  *     Py_ssize_t bestj,
@@ -3112,7 +3112,7 @@ static __pyx_t_5cyseq_4_seq_CMatch __pyx_f_5cyseq_4_seq_extend_match(Py_ssize_t 
  *         while (besti > alo and bestj > blo
  *                and a[besti - 1] == b[bestj - 1]             # <<<<<<<<<<<<<<
  *                and (besti - 1) in matchables):
- * 
+ *
 */
       __pyx_t_2 = (__pyx_v_bestj > __pyx_v_blo);
       if (__pyx_t_2) {
@@ -3125,7 +3125,7 @@ static __pyx_t_5cyseq_4_seq_CMatch __pyx_f_5cyseq_4_seq_extend_match(Py_ssize_t 
  *         while (besti > alo and bestj > blo
  *                and a[besti - 1] == b[bestj - 1]
  *                and (besti - 1) in matchables):             # <<<<<<<<<<<<<<
- * 
+ *
  *             besti -= 1
 */
       __pyx_t_3 = (__pyx_v_besti - 1);
@@ -3135,7 +3135,7 @@ static __pyx_t_5cyseq_4_seq_CMatch __pyx_f_5cyseq_4_seq_extend_match(Py_ssize_t 
  *         while (besti > alo and bestj > blo
  *                and a[besti - 1] == b[bestj - 1]             # <<<<<<<<<<<<<<
  *                and (besti - 1) in matchables):
- * 
+ *
 */
       __pyx_t_4 = __Pyx_GetItemInt(__pyx_v_a, __pyx_t_3, Py_ssize_t, 1, PyLong_FromSsize_t, 0, 1, 1, 1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 150, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_4);
@@ -3157,7 +3157,7 @@ static __pyx_t_5cyseq_4_seq_CMatch __pyx_f_5cyseq_4_seq_extend_match(Py_ssize_t 
  *         while (besti > alo and bestj > blo
  *                and a[besti - 1] == b[bestj - 1]
  *                and (besti - 1) in matchables):             # <<<<<<<<<<<<<<
- * 
+ *
  *             besti -= 1
 */
       __pyx_t_6 = PyLong_FromSsize_t((__pyx_v_besti - 1)); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 151, __pyx_L1_error)
@@ -3170,7 +3170,7 @@ static __pyx_t_5cyseq_4_seq_CMatch __pyx_f_5cyseq_4_seq_extend_match(Py_ssize_t 
 
       /* "cyseq/_seq.pyx":153
  *                and (besti - 1) in matchables):
- * 
+ *
  *             besti -= 1             # <<<<<<<<<<<<<<
  *             bestj -= 1
  *             bestsize += 1
@@ -3178,11 +3178,11 @@ static __pyx_t_5cyseq_4_seq_CMatch __pyx_f_5cyseq_4_seq_extend_match(Py_ssize_t 
       __pyx_v_besti = (__pyx_v_besti - 1);
 
       /* "cyseq/_seq.pyx":154
- * 
+ *
  *             besti -= 1
  *             bestj -= 1             # <<<<<<<<<<<<<<
  *             bestsize += 1
- * 
+ *
 */
       __pyx_v_bestj = (__pyx_v_bestj - 1);
 
@@ -3190,7 +3190,7 @@ static __pyx_t_5cyseq_4_seq_CMatch __pyx_f_5cyseq_4_seq_extend_match(Py_ssize_t 
  *             besti -= 1
  *             bestj -= 1
  *             bestsize += 1             # <<<<<<<<<<<<<<
- * 
+ *
  *         while (besti + bestsize < ahi and bestj + bestsize < bhi
 */
       __pyx_v_bestsize = (__pyx_v_bestsize + 1);
@@ -3198,7 +3198,7 @@ static __pyx_t_5cyseq_4_seq_CMatch __pyx_f_5cyseq_4_seq_extend_match(Py_ssize_t 
 
     /* "cyseq/_seq.pyx":157
  *             bestsize += 1
- * 
+ *
  *         while (besti + bestsize < ahi and bestj + bestsize < bhi             # <<<<<<<<<<<<<<
  *                and a[besti + bestsize] == b[bestj + bestsize]
  *                and (besti + bestsize) in matchables):
@@ -3212,11 +3212,11 @@ static __pyx_t_5cyseq_4_seq_CMatch __pyx_f_5cyseq_4_seq_extend_match(Py_ssize_t 
       }
 
       /* "cyseq/_seq.pyx":158
- * 
+ *
  *         while (besti + bestsize < ahi and bestj + bestsize < bhi
  *                and a[besti + bestsize] == b[bestj + bestsize]             # <<<<<<<<<<<<<<
  *                and (besti + bestsize) in matchables):
- * 
+ *
 */
       __pyx_t_2 = ((__pyx_v_bestj + __pyx_v_bestsize) < __pyx_v_bhi);
       if (__pyx_t_2) {
@@ -3229,17 +3229,17 @@ static __pyx_t_5cyseq_4_seq_CMatch __pyx_f_5cyseq_4_seq_extend_match(Py_ssize_t 
  *         while (besti + bestsize < ahi and bestj + bestsize < bhi
  *                and a[besti + bestsize] == b[bestj + bestsize]
  *                and (besti + bestsize) in matchables):             # <<<<<<<<<<<<<<
- * 
+ *
  *             bestsize += 1
 */
       __pyx_t_3 = (__pyx_v_besti + __pyx_v_bestsize);
 
       /* "cyseq/_seq.pyx":158
- * 
+ *
  *         while (besti + bestsize < ahi and bestj + bestsize < bhi
  *                and a[besti + bestsize] == b[bestj + bestsize]             # <<<<<<<<<<<<<<
  *                and (besti + bestsize) in matchables):
- * 
+ *
 */
       __pyx_t_6 = __Pyx_GetItemInt(__pyx_v_a, __pyx_t_3, Py_ssize_t, 1, PyLong_FromSsize_t, 0, 1, 1, 1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 158, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_6);
@@ -3261,7 +3261,7 @@ static __pyx_t_5cyseq_4_seq_CMatch __pyx_f_5cyseq_4_seq_extend_match(Py_ssize_t 
  *         while (besti + bestsize < ahi and bestj + bestsize < bhi
  *                and a[besti + bestsize] == b[bestj + bestsize]
  *                and (besti + bestsize) in matchables):             # <<<<<<<<<<<<<<
- * 
+ *
  *             bestsize += 1
 */
       __pyx_t_4 = PyLong_FromSsize_t((__pyx_v_besti + __pyx_v_bestsize)); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 159, __pyx_L1_error)
@@ -3274,9 +3274,9 @@ static __pyx_t_5cyseq_4_seq_CMatch __pyx_f_5cyseq_4_seq_extend_match(Py_ssize_t 
 
       /* "cyseq/_seq.pyx":161
  *                and (besti + bestsize) in matchables):
- * 
+ *
  *             bestsize += 1             # <<<<<<<<<<<<<<
- * 
+ *
  *     return CMatch(besti, bestj, bestsize)
 */
       __pyx_v_bestsize = (__pyx_v_bestsize + 1);
@@ -3293,10 +3293,10 @@ static __pyx_t_5cyseq_4_seq_CMatch __pyx_f_5cyseq_4_seq_extend_match(Py_ssize_t 
 
   /* "cyseq/_seq.pyx":163
  *             bestsize += 1
- * 
+ *
  *     return CMatch(besti, bestj, bestsize)             # <<<<<<<<<<<<<<
- * 
- * 
+ *
+ *
 */
   __pyx_t_7.a = __pyx_v_besti;
   __pyx_t_7.b = __pyx_v_bestj;
@@ -3305,8 +3305,8 @@ static __pyx_t_5cyseq_4_seq_CMatch __pyx_f_5cyseq_4_seq_extend_match(Py_ssize_t 
   goto __pyx_L0;
 
   /* "cyseq/_seq.pyx":132
- * 
- * 
+ *
+ *
  * cdef CMatch extend_match(             # <<<<<<<<<<<<<<
  *     Py_ssize_t besti,
  *     Py_ssize_t bestj,
@@ -3325,15 +3325,15 @@ static __pyx_t_5cyseq_4_seq_CMatch __pyx_f_5cyseq_4_seq_extend_match(Py_ssize_t 
 }
 
 /* "cyseq/_seq.pyx":166
- * 
- * 
+ *
+ *
  * def find_longest_match(             # <<<<<<<<<<<<<<
  *     a,
  *     b,
 */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_5cyseq_4_seq_1find_longest_match(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_5cyseq_4_seq_1find_longest_match(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -3342,7 +3342,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 ); /*proto*/
 PyDoc_STRVAR(__pyx_doc_5cyseq_4_seq_find_longest_match, "\n    Find longest matching block of a and b in a[alo:ahi] and b[blo:bhi].\n\n    `b2j` is a mapping of b high token ids -> list of position in b\n    `len_good` is such that token ids smaller than `_good_good` are treated as\n    good, non-junk tokens. `matchables` is a set of matchable positions.\n    Positions absent from this set are ignored.\n\n    Return (i,j,k) Match tuple where:\n        \"i\" in the start in \"a\"\n        \"j\" in the start in \"b\"\n        \"k\" in the size of the match\n\n    and such that a[i:i+k] is equal to b[j:j+k], where\n        alo <= i <= i+k <= ahi\n        blo <= j <= j+k <= bhi\n\n    and for all (i',j',k') matchable token positions meeting those conditions,\n        k >= k'\n        i <= i'\n        and if i == i', j <= j'\n\n    In other words, of all maximal matching blocks, return one that starts\n    earliest in a, and of all those maximal matching blocks that start earliest\n    in a, return the one that starts earliest in b.\n\n    First the longest matching block (aka contiguous substring) is determined\n    where no junk element appears in the block. Then that block is extended as\n    far as possible by matching other tokens including junk on both sides. So\n    the resulting block never matches on junk.\n\n    If no blocks match, return Match(alo, blo, 0).\n    ");
 static PyMethodDef __pyx_mdef_5cyseq_4_seq_1find_longest_match = {"find_longest_match", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_5cyseq_4_seq_1find_longest_match, __Pyx_METH_FASTCALL|METH_KEYWORDS, __pyx_doc_5cyseq_4_seq_find_longest_match};
-static PyObject *__pyx_pw_5cyseq_4_seq_1find_longest_match(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_5cyseq_4_seq_1find_longest_match(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -3504,7 +3504,7 @@ static PyObject *__pyx_pf_5cyseq_4_seq_find_longest_match(CYTHON_UNUSED PyObject
  *     """
  *     x = _find_longest_match(a, b, alo, ahi, blo, bhi, b2j, len_good, matchables)             # <<<<<<<<<<<<<<
  *     return Match(x.a, x.b, x.size)
- * 
+ *
 */
   __pyx_t_1 = __pyx_f_5cyseq_4_seq__find_longest_match(__pyx_v_a, __pyx_v_b, __pyx_v_alo, __pyx_v_ahi, __pyx_v_blo, __pyx_v_bhi, __pyx_v_b2j, __pyx_v_len_good, __pyx_v_matchables); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 210, __pyx_L1_error)
   __pyx_v_x = __pyx_t_1;
@@ -3513,8 +3513,8 @@ static PyObject *__pyx_pf_5cyseq_4_seq_find_longest_match(CYTHON_UNUSED PyObject
  *     """
  *     x = _find_longest_match(a, b, alo, ahi, blo, bhi, b2j, len_good, matchables)
  *     return Match(x.a, x.b, x.size)             # <<<<<<<<<<<<<<
- * 
- * 
+ *
+ *
 */
   __Pyx_XDECREF(__pyx_r);
   __pyx_t_3 = NULL;
@@ -3554,8 +3554,8 @@ static PyObject *__pyx_pf_5cyseq_4_seq_find_longest_match(CYTHON_UNUSED PyObject
   goto __pyx_L0;
 
   /* "cyseq/_seq.pyx":166
- * 
- * 
+ *
+ *
  * def find_longest_match(             # <<<<<<<<<<<<<<
  *     a,
  *     b,
@@ -3578,15 +3578,15 @@ static PyObject *__pyx_pf_5cyseq_4_seq_find_longest_match(CYTHON_UNUSED PyObject
 }
 
 /* "cyseq/_seq.pyx":214
- * 
- * 
+ *
+ *
  * def match_blocks(             # <<<<<<<<<<<<<<
  *     a,
  *     b,
 */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_5cyseq_4_seq_3match_blocks(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_5cyseq_4_seq_3match_blocks(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -3595,7 +3595,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 ); /*proto*/
 PyDoc_STRVAR(__pyx_doc_5cyseq_4_seq_2match_blocks, "\n    Return a list of matching block Match triples describing matching\n    subsequences of `a` in `b` starting from the `a_start` position in `a` up to\n    the `a_end` position in `a`.\n\n    `b2j` is a mapping of b \"high\" token ids -> list of positions in b, e.g. a\n    posting list.\n\n    `len_good` is such that token ids smaller than `len_good` are treated as\n    important, non-junk tokens.\n\n    `matchables` is a set of matchable positions. Positions absent from this set\n    are ignored.\n\n    Each triple is of the form (i, j, n), and means that a[i:i+n] == b[j:j+n].\n    The triples are monotonically increasing in i and in j.  It is also\n    guaranteed that adjacent triples never describe adjacent equal blocks.\n    Instead adjacent blocks are merged and collapsed in a single block.\n    ");
 static PyMethodDef __pyx_mdef_5cyseq_4_seq_3match_blocks = {"match_blocks", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_5cyseq_4_seq_3match_blocks, __Pyx_METH_FASTCALL|METH_KEYWORDS, __pyx_doc_5cyseq_4_seq_2match_blocks};
-static PyObject *__pyx_pw_5cyseq_4_seq_3match_blocks(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_5cyseq_4_seq_3match_blocks(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -3956,7 +3956,7 @@ static PyObject *__pyx_pf_5cyseq_4_seq_2match_blocks(CYTHON_UNUSED PyObject *__p
  *             if i + k < ahi and j + k < bhi:
  *                 # there is unprocessed things remaining to the right
  *                 queue.push_back(MatchingBlockQueueElem(i+k, ahi, j+k, bhi))             # <<<<<<<<<<<<<<
- * 
+ *
  *     cpp_sort(matching_blocks.begin(), matching_blocks.end(), &CMatch_sorter)
 */
         __pyx_t_1.alo = (__pyx_v_i + __pyx_v_k);
@@ -3991,9 +3991,9 @@ static PyObject *__pyx_pf_5cyseq_4_seq_2match_blocks(CYTHON_UNUSED PyObject *__p
 
   /* "cyseq/_seq.pyx":271
  *                 queue.push_back(MatchingBlockQueueElem(i+k, ahi, j+k, bhi))
- * 
+ *
  *     cpp_sort(matching_blocks.begin(), matching_blocks.end(), &CMatch_sorter)             # <<<<<<<<<<<<<<
- * 
+ *
  *     # collapse adjacent blocks
 */
   try {
@@ -4004,7 +4004,7 @@ static PyObject *__pyx_pf_5cyseq_4_seq_2match_blocks(CYTHON_UNUSED PyObject *__p
   }
 
   /* "cyseq/_seq.pyx":274
- * 
+ *
  *     # collapse adjacent blocks
  *     i1 = j1 = k1 = 0             # <<<<<<<<<<<<<<
  *     non_adjacent = []
@@ -4181,7 +4181,7 @@ static PyObject *__pyx_pf_5cyseq_4_seq_2match_blocks(CYTHON_UNUSED PyObject *__p
  *             i1, j1, k1 = i2, j2, k2
  *     if k1:             # <<<<<<<<<<<<<<
  *         non_adjacent.append(Match(i1, j1, k1))
- * 
+ *
 */
   __pyx_t_3 = (__pyx_v_k1 != 0);
   if (__pyx_t_3) {
@@ -4190,7 +4190,7 @@ static PyObject *__pyx_pf_5cyseq_4_seq_2match_blocks(CYTHON_UNUSED PyObject *__p
  *             i1, j1, k1 = i2, j2, k2
  *     if k1:
  *         non_adjacent.append(Match(i1, j1, k1))             # <<<<<<<<<<<<<<
- * 
+ *
  *     return non_adjacent
 */
     __pyx_t_12 = NULL;
@@ -4233,13 +4233,13 @@ static PyObject *__pyx_pf_5cyseq_4_seq_2match_blocks(CYTHON_UNUSED PyObject *__p
  *             i1, j1, k1 = i2, j2, k2
  *     if k1:             # <<<<<<<<<<<<<<
  *         non_adjacent.append(Match(i1, j1, k1))
- * 
+ *
 */
   }
 
   /* "cyseq/_seq.pyx":294
  *         non_adjacent.append(Match(i1, j1, k1))
- * 
+ *
  *     return non_adjacent             # <<<<<<<<<<<<<<
 */
   __Pyx_XDECREF(__pyx_r);
@@ -4248,8 +4248,8 @@ static PyObject *__pyx_pf_5cyseq_4_seq_2match_blocks(CYTHON_UNUSED PyObject *__p
   goto __pyx_L0;
 
   /* "cyseq/_seq.pyx":214
- * 
- * 
+ *
+ *
  * def match_blocks(             # <<<<<<<<<<<<<<
  *     a,
  *     b,
@@ -4641,7 +4641,7 @@ __Pyx_RefNannySetupContext("PyInit__seq", 0);
  * # See https://aboutcode.org for more information about nexB OSS projects.
  * #
  * from collections import namedtuple as _namedtuple             # <<<<<<<<<<<<<<
- * 
+ *
  * cimport cython
 */
   __pyx_t_2 = __Pyx_PyList_Pack(1, __pyx_mstate_global->__pyx_n_u_namedtuple); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 9, __pyx_L1_error)
@@ -4656,11 +4656,11 @@ __Pyx_RefNannySetupContext("PyInit__seq", 0);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
   /* "cyseq/_seq.pyx":31
- * 
- * 
+ *
+ *
  * Match = _namedtuple('Match', 'a b size')             # <<<<<<<<<<<<<<
- * 
- * 
+ *
+ *
 */
   __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_namedtuple_2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 31, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
@@ -4671,8 +4671,8 @@ __Pyx_RefNannySetupContext("PyInit__seq", 0);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
   /* "cyseq/_seq.pyx":166
- * 
- * 
+ *
+ *
  * def find_longest_match(             # <<<<<<<<<<<<<<
  *     a,
  *     b,
@@ -4683,8 +4683,8 @@ __Pyx_RefNannySetupContext("PyInit__seq", 0);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
   /* "cyseq/_seq.pyx":214
- * 
- * 
+ *
+ *
  * def match_blocks(             # <<<<<<<<<<<<<<
  *     a,
  *     b,
@@ -4838,11 +4838,11 @@ static int __Pyx_InitCachedConstants(__pyx_mstatetype *__pyx_mstate) {
   __Pyx_RefNannySetupContext("__Pyx_InitCachedConstants", 0);
 
   /* "cyseq/_seq.pyx":31
- * 
- * 
+ *
+ *
  * Match = _namedtuple('Match', 'a b size')             # <<<<<<<<<<<<<<
- * 
- * 
+ *
+ *
 */
   __pyx_mstate_global->__pyx_tuple[0] = PyTuple_Pack(2, __pyx_mstate_global->__pyx_n_u_Match, __pyx_mstate_global->__pyx_kp_u_a_b_size); if (unlikely(!__pyx_mstate_global->__pyx_tuple[0])) __PYX_ERR(0, 31, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_mstate_global->__pyx_tuple[0]);
