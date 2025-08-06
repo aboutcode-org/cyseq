@@ -3,6 +3,7 @@ requires = ["setuptools >= 50", "wheel", "setuptools_scm[toml] >= 6", "Cython"]
 build-backend = "setuptools.build_meta"
 
 [project]
+name = "cyseq"
 version = "0.0.2"
 
 [tool.setuptools_scm]
