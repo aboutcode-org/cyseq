@@ -133,12 +133,14 @@ jobs:
       - name: Download builds
         uses: actions/download-artifact@v4
         with:
+          name: cyseq-build
           path: cyseq-build
 
       - name: Create GH release
         uses: softprops/action-gh-release@v2
         with:
           draft: true
+          files: cyseq-build/*
 
   create-pypi-release:
     name: Create PyPI release
