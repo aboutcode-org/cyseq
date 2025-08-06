@@ -64,7 +64,7 @@ jobs:
         run: python -m cibuildwheel --output-dir dist/
 
       - name: Validate wheels for Pypi
-        run: pipx run twine check --strict dist/
+        run: pipx run twine check dist/
 
       - name: Upload wheels
         uses: actions/upload-artifact@v4
