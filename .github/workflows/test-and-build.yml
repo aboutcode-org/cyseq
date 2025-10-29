@@ -37,15 +37,9 @@ jobs:
             matrix:
                 os: [macos-latest, windows-latest]
                 arch: [auto64]
-                build: ["cp{39,310,311,312,313}-*"]
+                build: ["cp{310,311,312,313,314}-*"]
 
                 include:
-                    - os: ubuntu-latest
-                      arch: auto64
-                      type: manylinux1
-                      build: "cp39-*"
-                      CIBW_MANYLINUX_X86_64_IMAGE: manylinux1
-
                     - os: ubuntu-latest
                       arch: auto64
                       type: manylinux2010
@@ -55,16 +49,16 @@ jobs:
                     - os: ubuntu-latest
                       arch: auto64
                       type: manylinux2014
-                      build: "cp{311,312,313}-*"
+                      build: "cp{311,312,313,314}-*"
                       CIBW_MANYLINUX_X86_64_IMAGE: manylinux2014
 
                     - os: macos-latest
                       arch: universal2
-                      build: "cp{39,310,311,312,313}-*"
+                      build: "cp{310,311,312,313,314}-*"
 
                     - os: windows-latest
                       arch: auto64
-                      build: "cp{39,310,311,312,313}-*"
+                      build: "cp{310,311,312,313,314}-*"
 
         steps:
             - uses: actions/checkout@v4
@@ -119,7 +113,7 @@ jobs:
             fail-fast: false
             matrix:
                 os: [ubuntu-22.04, ubuntu-24.04, macos-13, macos-14]
-                python: ["3.9", "3.10", "3.11", "3.12", "3.13"]
+                python: ["3.10", "3.11", "3.12", "3.13", "3.14"]
 
         steps:
             - name: Set up Python
@@ -142,7 +136,7 @@ jobs:
             fail-fast: false
             matrix:
                 os: [windows-latest]
-                python: ["3.9", "3.10", "3.11", "3.12", "3.13"]
+                python: ["3.10", "3.11", "3.12", "3.13", "3.14"]
 
         steps:
             - name: Set up Python
