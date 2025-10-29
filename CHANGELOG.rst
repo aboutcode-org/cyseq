@@ -1,6 +1,11 @@
 Changelog
 =========
 
+v0.1.1
+------
+
+*2025-10-29* -- Properly build python 3.14 builds using latest cibuildwheel
+
 v0.1.0
 ------
 
