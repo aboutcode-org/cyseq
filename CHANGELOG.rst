@@ -1,6 +1,11 @@
 Changelog
 =========
 
+v0.1.0
+------
+
+*2025-10-29* -- Drop python 3.9 support and add python 3.14 support
+
 v0.0.2
 ------
 
