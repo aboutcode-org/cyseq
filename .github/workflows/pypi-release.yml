@@ -149,10 +149,13 @@ jobs:
       - name: Download builds
         uses: actions/download-artifact@v4
         with:
-          path: cyseq-build
+          name: cyseq-build
+          path: dist/
+
+      - name: Mock PyPI upload
+        run: |
+          ls -al dist
 
       - name: Publish to PyPI
         if: startsWith(github.ref, 'refs/tags')
         uses: pypa/gh-action-pypi-publish@release/v1
-        with:
-          packages-dir: cyseq-build/
