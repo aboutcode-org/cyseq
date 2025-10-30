@@ -1,6 +1,12 @@
 Changelog
 =========
 
+v0.1.2
+------
+
+*2025-10-30* -- Also build linux python 3.10 builds which was skipped in v0.1.1
+
+
 v0.1.1
 ------
 
