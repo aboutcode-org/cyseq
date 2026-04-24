@@ -74,8 +74,6 @@ jobs:
                   CIBW_ARCHS: ${{ matrix.arch }}
                   CIBW_TEST_REQUIRES: pytest
                   CIBW_TEST_COMMAND: pytest -vvs {project}/tests
-                  # Skip PyPy wheels
-                  CIBW_SKIP: "pp*"
 
             - name: Collect built wheels
               uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f
@@ -95,6 +93,7 @@ jobs:
           - name: Checkout and install reqs
             run: |
                 pip install --upgrade --user build twine pkginfo packaging pip setuptools cython
+                pip install setuptools-scm==10.0.4
 
           - name: Build sdist
             run: |

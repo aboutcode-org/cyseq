@@ -86,6 +86,7 @@ jobs:
         - name: Checkout and install reqs
           run: |
               pip install --upgrade --user build twine pkginfo packaging pip setuptools cython
+              pip install setuptools-scm==10.0.4
 
         - name: Build sdist
           run: |
