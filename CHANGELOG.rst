@@ -1,6 +1,12 @@
 Changelog
 =========
 
+v0.1.3
+------
+
+*2026-04-24* -- Also test and build linux arm wheels
+
+
 v0.1.2
 ------
 
