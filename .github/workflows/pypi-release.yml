@@ -31,35 +31,38 @@ jobs:
           matrix:
               os: [macos-latest, windows-latest]
               arch: [auto64]
-              build: ["cp{310,311,312,313,314}-*"]
+              build: ["cp{310,311,312,313,314,315}-*"]
 
               include:
                   - os: ubuntu-latest
                     arch: auto64
                     type: manylinux2014
-                    build: "cp{310,311,312,313,314}-*"
+                    build: "cp{310,311,312,313,314,315}-*"
                     CIBW_MANYLINUX_X86_64_IMAGE: manylinux2014
 
                   - os: ubuntu-24.04-arm
                     arch: aarch64
-                    build: "cp{310,311,312,313,314}-*"
+                    build: "cp{310,311,312,313,314,315}-*"
                     CIBW_MANYLINUX_AARCH64_IMAGE: manylinux2014
 
                   - os: macos-latest
                     arch: universal2
-                    build: "cp{310,311,312,313,314}-*"
+                    build: "cp{310,311,312,313,314,315}-*"
 
                   - os: windows-latest
                     arch: auto64
-                    build: "cp{310,311,312,313,314}-*"
+                    build: "cp{310,311,312,313,314,315}-*"
 
       steps:
-          - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
+          - name: Checkout repository
+            # https://github.com/actions/checkout/releases/tag/v7.0.1  
+            uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
             with:
               persist-credentials: false
 
           - name: Build wheels and run tests
-            uses: pypa/cibuildwheel@8d2b08b68458a16aeb24b64e68a09ab1c8e82084
+            # https://github.com/pypa/cibuildwheel/releases/tag/v4.3.5
+            uses: pypa/cibuildwheel@f9b966cfadf4109556cadc5bb39ddb72d0ce664e # v4.3.5
             env:
                 CIBW_BUILD: ${{ matrix.build }}
                 CIBW_MANYLINUX_X86_64_IMAGE: ${{ matrix.CIBW_MANYLINUX_X86_64_IMAGE }}
@@ -69,7 +72,8 @@ jobs:
                 CIBW_TEST_COMMAND: pytest -vvs {project}/tests
 
           - name: Collect built wheels
-            uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f
+            # https://github.com/actions/upload-artifact/releases/tag/v7.0.2
+            uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
             with:
                 name: cyseq-wheels-${{ matrix.os }}-${{ strategy.job-index }}
                 path: ./wheelhouse/*.whl
@@ -79,7 +83,9 @@ jobs:
     runs-on: ubuntu-24.04
 
     steps:
-        - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
+        - name: Checkout repository
+          # https://github.com/actions/checkout/releases/tag/v7.0.1  
+          uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
           with:
             persist-credentials: false
 
@@ -94,7 +100,8 @@ jobs:
               twine check dist/*
 
         - name: Collect built sdist
-          uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f
+          # https://github.com/actions/upload-artifact/releases/tag/v7.0.2
+          uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
           with:
               name: cyseq-sdist
               path: dist/*.tar.gz
@@ -104,7 +111,8 @@ jobs:
     needs: [build-sdist, build-wheels]
     steps:
       - name: Merge created wheels and sdist in a single zip
-        uses: actions/upload-artifact/merge@b7c566a772e6b6bfb58ed0dc250532a479d7789f
+        # https://github.com/actions/upload-artifact/releases/tag/v7.0.2
+        uses: actions/upload-artifact/merge@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
         with:
           name: cyseq-build
           pattern: cyseq-*
@@ -114,7 +122,9 @@ jobs:
     needs: merge
     runs-on: ubuntu-22.04
     steps:
-      - uses: actions/download-artifact@37930b1c2abaa49bbe596cd826c3c89aef350131
+      - name: Download wheels artifact
+        # https://github.com/actions/download-artifact/releases/tag/v8.0.2
+        uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
         with:
           path: cyseq-build
       - run: find . -ls
@@ -130,13 +140,15 @@ jobs:
 
     steps:
       - name: Download builds
-        uses: actions/download-artifact@37930b1c2abaa49bbe596cd826c3c89aef350131
+        # https://github.com/actions/download-artifact/releases/tag/v8.0.2
+        uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
         with:
           name: cyseq-build
           path: cyseq-build
 
       - name: Create GH release
-        uses: softprops/action-gh-release@b4309332981a82ec1c5618f44dd2e27cc8bfbfda
+        # https://github.com/softprops/action-gh-release/releases/tag/v3.0.4
+        uses: softprops/action-gh-release@8a0cd651e5b2365bd640854a3fa5dfc70e4875f3 # v3.0.4
         with:
           draft: true
           files: cyseq-build/*
@@ -152,7 +164,8 @@ jobs:
 
     steps:
       - name: Download builds
-        uses: actions/download-artifact@37930b1c2abaa49bbe596cd826c3c89aef350131
+        # https://github.com/actions/download-artifact/releases/tag/v8.0.2
+        uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
         with:
           name: cyseq-build
           path: dist/
@@ -163,4 +176,5 @@ jobs:
 
       - name: Publish to PyPI
         if: startsWith(github.ref, 'refs/tags')
-        uses: pypa/gh-action-pypi-publish@cef221092ed1bacb1cc03d23a2d87d1d172e277b
+        # https://github.com/pypa/gh-action-pypi-publish/releases/tag/v1.14.3
+        uses: pypa/gh-action-pypi-publish@7245906fb61fa33a13554f9d5fb856fe61758086 #v1.14.3
